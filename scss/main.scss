@@ -1,5 +1,6 @@
 @import "config";
 @import "responsive";
+@import "menu";
 
 .background {
   height: 100vh;
@@ -11,12 +12,6 @@
     url("../img/image-2.jpg") center top no-repeat;
   background-size: cover;
   font-family: "Marck Script", cursive;
-
-  p {
-    color: white;
-    align-items: center;
-    text-align: center;
-  }
 }
 
 h1,
@@ -38,8 +33,32 @@ body {
   font-family: "Baloo 2", cursive;
 }
 
+a {
+  color: set-text-color($primary-color);
+  text-decoration: none;
+  @include transition-ease;
+
+  &:hover {
+    color: rgb(255, 157, 66);
+  }
+}
+
+.menu-nav__item.active > a {
+  color: rgb(255, 157, 66);
+}
+
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+  background: black;
+  text-align: right;
+}
+
 p {
   color: black;
   align-items: center;
   text-align: center;
+  margin: 4rem;
 }
