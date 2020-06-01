@@ -1,39 +1,15 @@
 @import "config";
 @import "responsive";
 @import "menu";
+@import "home";
 
-.pic-area {
-  height: 100vh;
-  padding-top: 40vh;
-  overflow: hidden;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
-    url("../img/image-2.jpg") center top no-repeat;
-  background-size: cover;
-  font-family: "Marck Script", cursive;
-
-  h1,
-  h2,
-  h3 {
-    font-weight: 800;
-  }
-
-  h1 {
-    font-size: 48px;
-  }
-
-  h2 {
-    font-size: 36px;
-  }
-
-  h3 {
-    font-size: 24px;
-  }
-}
-
-body {
-  height: 100vh;
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+  background: rgb(0, 0, 0);
+  text-align: right;
 }
 
 .nav {
@@ -50,61 +26,32 @@ body {
     display: inline;
     font-family: "Baloo 2", cursive;
   }
-}
 
-a {
-  color: white;
-  font-size: 1.5rem;
-  padding: 2rem;
-  text-decoration: none;
-  @include transition-ease;
+  a {
+    color: white;
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-decoration: none;
+    @include transition-ease;
 
-  &:hover {
+    &:hover {
+      color: rgb(182, 111, 45);
+    }
+  }
+
+  .menu-nav__item.active > a {
     color: rgb(182, 111, 45);
   }
-}
-
-.menu-nav__item.active > a {
-  color: rgb(182, 111, 45);
-}
-
-header {
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-  padding: 1rem;
-  background: rgb(0, 0, 0);
-  text-align: right;
-}
-
-p {
-  color: black;
-  align-items: center;
-  text-align: center;
-  margin: 0px 8rem;
-}
-
-.home__name--last {
-  color: rgb(182, 111, 45);
-}
-
-.logo-first {
-  color: rgb(182, 182, 182);
 }
 
 .mug-logo {
   color: rgb(224, 224, 224);
 }
 
-.pic-area-text {
-  padding: 1rem;
-  background: rgba(71, 71, 71, 0.2);
+.logo-first {
+  color: rgb(182, 182, 182);
 }
 
-.intro {
-  font-family: "Baloo 2", cursive;
-  h1 {
-    text-align: center;
-    margin: 20px;
-  }
+.logo-last {
+  color: rgb(182, 111, 45);
 }

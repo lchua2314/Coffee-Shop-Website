@@ -1,0 +1,53 @@
+body {
+  height: 100vh;
+}
+
+.pic-area {
+  height: 100vh;
+  padding-top: 40vh;
+  overflow: hidden;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+    url("../img/image-2.jpg") center top no-repeat;
+  background-size: cover;
+  font-family: "Marck Script", cursive;
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  .pic-area-text {
+    padding: 1rem;
+    background: rgba(71, 71, 71, 0.2);
+  }
+}
+
+.intro {
+  font-family: "Baloo 2", cursive;
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+
+  p {
+    color: black;
+    align-items: center;
+    text-align: center;
+    margin: 0px 8rem;
+  }
+}
