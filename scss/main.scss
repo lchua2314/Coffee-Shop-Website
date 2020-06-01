@@ -34,21 +34,38 @@
 
 body {
   height: 100vh;
-  font-family: "Baloo 2", cursive;
+}
+
+.nav {
+  h3 {
+    padding: 0;
+    margin: 0;
+    font-family: "Marck Script", cursive;
+    float: left;
+    font-size: 24px;
+    color: rgb(224, 224, 224);
+  }
+
+  ul li {
+    display: inline;
+    font-family: "Baloo 2", cursive;
+  }
 }
 
 a {
-  color: set-text-color($primary-color);
+  color: white;
+  font-size: 1.5rem;
+  padding: 2rem;
   text-decoration: none;
   @include transition-ease;
 
   &:hover {
-    color: rgb(255, 157, 66);
+    color: rgb(182, 111, 45);
   }
 }
 
 .menu-nav__item.active > a {
-  color: rgb(255, 157, 66);
+  color: rgb(182, 111, 45);
 }
 
 header {
@@ -56,7 +73,7 @@ header {
   z-index: 2;
   width: 100%;
   padding: 1rem;
-  background: black;
+  background: rgb(0, 0, 0);
   text-align: right;
 }
 
@@ -64,9 +81,30 @@ p {
   color: black;
   align-items: center;
   text-align: center;
-  margin: 4rem;
+  margin: 0px 8rem;
 }
 
-span {
+.home__name--last {
   color: rgb(182, 111, 45);
+}
+
+.logo-first {
+  color: rgb(182, 182, 182);
+}
+
+.mug-logo {
+  color: rgb(224, 224, 224);
+}
+
+.pic-area-text {
+  padding: 1rem;
+  background: rgba(71, 71, 71, 0.2);
+}
+
+.intro {
+  font-family: "Baloo 2", cursive;
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
 }
