@@ -31,7 +31,7 @@ header {
     outline: none;
     color: white;
     font-size: 1.5rem;
-    padding: 2rem;
+    padding-right: 2rem;
     text-decoration: none;
     @include transition-ease;
 
@@ -47,14 +47,20 @@ header {
 
 .mug-logo {
   color: rgb(224, 224, 224);
+  text-shadow: -1px -1px 0 rgb(68, 68, 68), 1px -1px 0 rgb(68, 68, 68),
+    -1px 1px 0 rgb(68, 68, 68), 1px 1px 0 rgb(68, 68, 68);
 }
 
 .logo-first {
   color: rgb(182, 182, 182);
+  text-shadow: -1px -1px 0 rgb(68, 68, 68), 1px -1px 0 rgb(68, 68, 68),
+    -1px 1px 0 rgb(68, 68, 68), 1px 1px 0 rgb(68, 68, 68);
 }
 
 .logo-last {
   color: $primary-color;
+  text-shadow: -1px -1px 0 rgb(68, 68, 68), 1px -1px 0 rgb(68, 68, 68),
+    -1px 1px 0 rgb(68, 68, 68), 1px 1px 0 rgb(68, 68, 68);
 }
 
 footer {
