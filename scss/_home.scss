@@ -44,7 +44,7 @@ body {
     margin: 0.5rem;
     font-size: 1rem;
     letter-spacing: 1px;
-    background: rgb(182, 111, 45);
+    background: $primary-color;
     border: 1px solid black;
     @include transition-ease;
 
@@ -55,6 +55,36 @@ body {
 }
 
 .intro {
+  font-family: "Baloo 2", cursive;
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+
+  p {
+    color: black;
+    align-items: center;
+    text-align: center;
+    margin: 0px 8rem;
+  }
+}
+
+.services {
+  font-family: "Baloo 2", cursive;
+  h1 {
+    text-align: center;
+    margin: 20px;
+  }
+
+  p {
+    color: black;
+    align-items: center;
+    text-align: center;
+    margin: 0px 8rem;
+  }
+}
+
+.menu {
   font-family: "Baloo 2", cursive;
   h1 {
     text-align: center;

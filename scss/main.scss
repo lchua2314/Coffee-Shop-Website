@@ -36,12 +36,12 @@ header {
     @include transition-ease;
 
     &:hover {
-      color: rgb(182, 111, 45);
+      color: $primary-color;
     }
   }
 
   .menu-nav__item.active > a {
-    color: rgb(182, 111, 45);
+    color: $primary-color;
   }
 }
 
@@ -54,5 +54,10 @@ header {
 }
 
 .logo-last {
-  color: rgb(182, 111, 45);
+  color: $primary-color;
+}
+
+footer {
+  font-family: "Baloo 2", cursive;
+  text-align: right;
 }
