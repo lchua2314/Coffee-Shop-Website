@@ -1,6 +1,6 @@
 # Coffee-Shop-Website
 
-# Refences
+# References
 
 image-1.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.cancer.org%2Flatest-news%2Fcoffee-and-cancer-what-the-research-really-shows.html&psig=AOvVaw0iq9EtfvX1hadGn03z2syZ&ust=1590973260774000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCOD5pLPz3OkCFQAAAAAdAAAAABBA
 
