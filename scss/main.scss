@@ -10,38 +10,38 @@ header {
   padding: 1rem;
   background: black;
   text-align: right;
-}
 
-.nav {
-  h3 {
-    padding: 0;
-    margin: 0;
-    font-family: "Marck Script", cursive;
-    float: left;
-    font-size: 24px;
-    color: rgb(224, 224, 224);
-  }
+  .nav {
+    .logo {
+      padding: 0;
+      margin: 0;
+      font-family: "Marck Script", cursive;
+      float: left;
+      font-size: 24px;
+      color: rgb(224, 224, 224);
+    }
 
-  ul li {
-    display: inline;
-    font-family: "Baloo 2", cursive;
-  }
+    ul li {
+      display: inline;
+      font-family: "Baloo 2", cursive;
+    }
 
-  a {
-    outline: none;
-    color: white;
-    font-size: 1.5rem;
-    margin-right: 2rem;
-    text-decoration: none;
-    @include transition-ease;
+    a {
+      outline: none;
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 2rem;
+      text-decoration: none;
+      @include transition-ease;
 
-    &:hover {
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .menu-nav__item.active > a {
       color: $primary-color;
     }
-  }
-
-  .menu-nav__item.active > a {
-    color: $primary-color;
   }
 }
 
