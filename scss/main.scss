@@ -80,7 +80,7 @@ footer {
       @include transition-ease;
 
       &:hover {
-        color: $primary-color;
+        color: $hover-color;
       }
     }
   }

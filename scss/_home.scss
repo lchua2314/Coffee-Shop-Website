@@ -40,6 +40,7 @@
     }
 
     .btn-order {
+      cursor: pointer;
       font-family: "Baloo 2", cursive;
       text-decoration: none;
       outline: none;
@@ -52,7 +53,7 @@
       @include transition-ease;
 
       &:hover {
-        background: rgba(207, 207, 207, 0.3);
+        background: $hover-color;
       }
     }
   }
