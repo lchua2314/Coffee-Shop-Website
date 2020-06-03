@@ -125,7 +125,7 @@
     display: flex;
     font-family: "Baloo 2", cursive;
     color: black;
-    background: rgb(182, 182, 182);
+    background: $secondary-color;
 
     h1 {
       text-align: center;
@@ -154,6 +154,6 @@
   }
 
   footer {
-    background-color: rgb(182, 182, 182);
+    background-color: $secondary-color;
   }
 }
