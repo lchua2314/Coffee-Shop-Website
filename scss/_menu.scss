@@ -5,32 +5,36 @@
 
   .pic-area {
     height: 100vh;
-    padding-top: 40vh;
+    padding-top: 30vh;
     overflow: hidden;
     align-items: center;
     text-align: center;
     background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
       url("../img/image-3.jpg") center top no-repeat;
     background-size: cover;
-    font-family: "Marck Script", cursive;
+    font-family: "Baloo 2", cursive;
 
     h1,
     h2,
     h3 {
-      font-weight: 800;
+      font-weight: 400;
     }
 
     h1 {
-      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
-        1px 1px 0 #000;
+      text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+        -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
       font-size: 48px;
     }
 
     h2 {
+      text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+        -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
       font-size: 36px;
     }
 
     h3 {
+      text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+        -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
       font-size: 24px;
     }
 
