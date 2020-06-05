@@ -1,7 +1,5 @@
 .menu {
-  body {
-    height: 100vh;
-  }
+  background-color: $primary-color;
 
   .pic-area {
     height: 100vh;
@@ -62,103 +60,24 @@
     }
   }
 
-  .intro {
-    padding: 3rem 0;
-    display: flex;
-    font-family: "Baloo 2", cursive;
-    color: white;
-    background: black;
+  .flex {
+    background-color: $hover-color;
+    margin: 3rem auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
 
-    h1 {
+    .box {
+      padding: 5rem;
+      margin: 3rem;
       text-align: center;
-      margin: 20px;
+      border: 1px solid black;
+
+      .img {
+        background-image: url(../img/caffe-americano.webp);
+      }
     }
-
-    p {
-      align-items: center;
-      text-align: center;
-      margin: 0px 3rem;
-    }
-
-    &-boxA {
-      width: 100%;
-      height: 100vh;
-      background: url("../img/who-we-are.jpg") no-repeat;
-    }
-
-    &-boxB {
-      width: 50%;
-      padding-top: 30vh;
-    }
-  }
-
-  .services {
-    padding: 3rem 0;
-    display: flex;
-    font-family: "Baloo 2", cursive;
-    color: black;
-    background: $primary-color;
-
-    h1 {
-      text-align: center;
-      margin: 20px;
-    }
-
-    p {
-      align-items: center;
-      text-align: center;
-      margin: 0px 3rem;
-    }
-
-    &-boxA {
-      width: 70%;
-      padding-top: 30vh;
-      margin: 0;
-    }
-
-    &-boxB {
-      width: 100%;
-      height: 100vh;
-      background: url("../img/services.jpg") no-repeat;
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  .menu {
-    padding: 3rem 0;
-    display: flex;
-    font-family: "Baloo 2", cursive;
-    color: black;
-    background: $secondary-color;
-
-    h1 {
-      text-align: center;
-      margin: 20px;
-    }
-
-    p {
-      align-items: center;
-      text-align: center;
-      margin: 0px 3rem;
-    }
-
-    &-boxA {
-      width: 100%;
-      height: 70vh;
-      background: url("../img/menu.jpg") no-repeat;
-      padding: 0;
-      margin: 0;
-    }
-
-    &-boxB {
-      width: 100%;
-      padding-top: 20vh;
-      margin: 0;
-    }
-  }
-
-  footer {
-    background-color: $secondary-color;
   }
 }
