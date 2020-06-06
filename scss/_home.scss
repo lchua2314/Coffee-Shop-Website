@@ -1,4 +1,6 @@
 .home {
+  font-family: "Baloo 2", cursive;
+
   .pic-area {
     height: 100vh;
     padding-top: 35vh;
@@ -35,7 +37,7 @@
 
     .btn-order {
       cursor: pointer;
-      font-family: "Baloo 2", cursive;
+
       text-decoration: none;
       outline: none;
       padding: 0.5rem;
@@ -55,7 +57,7 @@
   .intro {
     padding: 3rem 0;
     display: flex;
-    font-family: "Baloo 2", cursive;
+
     color: white;
     background: black;
 
@@ -85,7 +87,7 @@
   .services {
     padding: 3rem 0;
     display: flex;
-    font-family: "Baloo 2", cursive;
+
     color: black;
     background: $primary-color;
 
@@ -97,7 +99,7 @@
     p {
       align-items: center;
       text-align: center;
-      margin: 0px 3rem;
+      margin: 0 3rem;
     }
 
     &-boxA {
@@ -110,15 +112,13 @@
       width: 100%;
       height: 100vh;
       background: url("../img/services.jpg") no-repeat;
-      margin: 0;
-      padding: 0;
     }
   }
 
   .menu {
     padding: 3rem 0;
     display: flex;
-    font-family: "Baloo 2", cursive;
+
     color: black;
     background: $secondary-color;
 
@@ -137,14 +137,11 @@
       width: 100%;
       height: 70vh;
       background: url("../img/menu.jpg") no-repeat;
-      padding: 0;
-      margin: 0;
     }
 
     &-boxB {
       width: 100%;
       padding-top: 20vh;
-      margin: 0;
     }
   }
 

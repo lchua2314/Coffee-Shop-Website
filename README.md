@@ -13,3 +13,5 @@ menu.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.traderjoes.com%2
 who-we-are.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fnudatasecurity.com%2Fresources%2Fblog%2Flearning-about-online-security-from-your-barista%2F&psig=AOvVaw1Q_nyaUFrvBSr4kv2wykRg&ust=1591140285879000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCMi9t9nh4ekCFQAAAAAdAAAAABBJ
 
 services.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodasgold.com%2Fcoffee%2Four-coffee-services%2F&psig=AOvVaw2za9K_MQKkR1ToKG8xl_zF&ust=1591140760043000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCIj08LPj4ekCFQAAAAAdAAAAABAP
+
+caffe-americano.webp, caffe-misto.webp, dark-roast-coffee.webp, cappuccino.webp, espresso.webp, espresso-macchiato.webp, flat-white.webp: All found on https://www.starbucks.com/menu/drinks/hot-coffees
