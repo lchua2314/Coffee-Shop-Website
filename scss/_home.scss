@@ -53,42 +53,7 @@
     }
   }
 
-  .intro {
-    padding: 3rem 0;
-    display: flex;
-    color: white;
-    background: black;
-
-    h1 {
-      text-align: center;
-      margin: 20px;
-    }
-
-    p {
-      align-items: center;
-      text-align: center;
-      margin: 0px 3rem;
-    }
-
-    &-box-img {
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    &-box-text {
-      width: 50%;
-      padding-top: 30vh;
-    }
-  }
-
-  .services {
-    padding: 3rem 0;
-    display: flex;
-    color: black;
-    background: $primary-color;
-
+  .main-area {
     h1 {
       text-align: center;
       margin: 20px;
@@ -100,46 +65,41 @@
       margin: 0 3rem;
     }
 
-    &-box-img {
-      img {
-        width: 100%;
-        height: 100%;
+    .section-area {
+      .intro {
+        padding: 3rem 0;
+        display: flex;
+        color: white;
+        background: black;
       }
-    }
 
-    &-box-text {
-      width: 50%;
-      padding-top: 30vh;
-    }
-  }
-
-  .menu {
-    padding: 3rem 0;
-    display: flex;
-    color: black;
-    background: $secondary-color;
-
-    h1 {
-      text-align: center;
-      margin: 20px;
-    }
-
-    p {
-      align-items: center;
-      text-align: center;
-      margin: 0px 3rem;
-    }
-
-    &-box-img {
-      img {
-        width: 100%;
-        height: 100%;
+      .services {
+        padding: 3rem 0;
+        display: flex;
+        color: black;
+        background: $primary-color;
       }
-    }
 
-    &-box-text {
-      width: 50%;
-      padding-top: 30vh;
+      .menu {
+        padding: 3rem 0;
+        display: flex;
+        color: black;
+        background: $secondary-color;
+      }
+
+      .box {
+        &-img {
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        &-text {
+          width: 50%;
+          padding-top: 30vh;
+        }
+      }
     }
   }
 
