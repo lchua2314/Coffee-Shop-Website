@@ -1,17 +1,63 @@
 @include media-md {
-  .pic-area {
-    height: 100vh;
+  .home {
+    .main-area {
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .section-area {
+        .intro {
+          color: white;
+          background: black;
+        }
+
+        .services {
+          display: flex;
+          color: white;
+          background: $primary-color;
+        }
+
+        .menu {
+          display: flex;
+          color: white;
+          background: $secondary-color;
+        }
+
+        .box {
+          &-img {
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          &-text {
+            position: absolute;
+            width: 100%;
+            padding: 0;
+            margin-top: 100px;
+            background: rgba(0, 0, 0, 0.7);
+          }
+        }
+      }
+    }
   }
 }
 
-@include media-lg {
-  .pic-area {
-    height: 100vh;
-  }
-}
+// @include media-lg {
+//   .pic-area {
+//     height: 100vh;
+//   }
+// }
 
-@include media-xl {
-  .pic-area {
-    height: 100vh;
-  }
-}
+// @include media-xl {
+//   .pic-area {
+//     height: 100vh;
+//   }
+// }

@@ -1,7 +1,6 @@
 $primary-color: rgb(182, 111, 45);
 $secondary-color: rgb(112, 112, 112);
 $hover-color: rgb(219, 134, 55);
-$main-transition: 2s;
 
 * {
   box-sizing: border-box;
@@ -13,26 +12,18 @@ $main-transition: 2s;
   transition: all 0.5s ease-in-out;
 }
 
-@function set-text-color($color) {
-  @if (lightness($color) > 40%) {
-    @return #000;
-  } @else {
-    @return #fff;
-  }
-}
-
 @mixin media-md {
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 768px) {
     @content;
   }
 }
 @mixin media-lg {
-  @media screen and (min-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     @content;
   }
 }
 @mixin media-xl {
-  @media screen and (min-width: 1600px) {
+  @media screen and (max-width: 1600px) {
     @content;
   }
 }
