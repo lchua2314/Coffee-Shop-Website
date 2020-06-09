@@ -10,6 +10,7 @@
       url("../img/contact.jpg") center top no-repeat;
     background-size: cover;
     font-family: "Marck Script", cursive;
+    @include transition-ease;
 
     h1,
     h2,
@@ -64,7 +65,7 @@
         @include transition-ease;
 
         &:hover {
-          color: $hover-color;
+          color: $primary-color;
         }
       }
     }

@@ -6,6 +6,10 @@
 @import "contact";
 @import "responsive";
 
+html {
+  @include transition-ease;
+}
+
 header {
   position: fixed;
   z-index: 2;
