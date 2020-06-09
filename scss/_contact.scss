@@ -1,0 +1,80 @@
+.contact {
+  font-family: "Baloo 2", cursive;
+  .pic-area {
+    height: 100vh;
+    padding-top: 35vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+      url("../img/contact.jpg") center top no-repeat;
+    background-size: cover;
+    font-family: "Marck Script", cursive;
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 800;
+      text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+        -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .pic-area-text {
+      padding: 1rem;
+      background: rgba(71, 71, 71, 0.2);
+    }
+
+    .sections {
+      font-family: "Baloo 2", cursive;
+      display: grid;
+      padding: 2rem 0;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem;
+      font-size: 1.5rem;
+      &-section {
+        background-color: rgba(182, 111, 45, 0.75);
+        padding: 1rem;
+        margin: 1rem;
+      }
+    }
+
+    .icons {
+      font-size: 2.5rem;
+      display: inline;
+      padding: 0;
+      margin: 0;
+
+      a {
+        color: black;
+        outline: none;
+        text-decoration: none;
+        margin: 0.5rem;
+        @include transition-ease;
+
+        &:hover {
+          color: $hover-color;
+        }
+      }
+    }
+
+    .copyright {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-family: "Baloo 2", cursive;
+      color: white;
+    }
+  }
+}

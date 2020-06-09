@@ -23,3 +23,5 @@ parking.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fnypost.com%2F2020
 venue.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.keurig.ca%2Fblog%2Fhow-to-host-an-afternoon-coffee-party%2F&psig=AOvVaw3nq5zVpaTUvJL8P4GuEXem&ust=1591667832936000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCJjKsfGO8ekCFQAAAAAdAAAAABAD
 
 image-4.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.tastingtable.com%2Fdrinks%2Fnational%2Fcompass-coffee-marines-dc-shaw&psig=AOvVaw2vVbocM3H31LuCfO5w7T3x&ust=1591666628699000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCIj5krSK8ekCFQAAAAAdAAAAABAJ
+
+contact.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.theinfatuation.com%2Fnew-york%2Fguides%2Fcoffee-shops-nyc-for-doing-work&psig=AOvVaw1gbHAmEzhlhfm5U_O7eB4f&ust=1591748046685000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCPCl-du58-kCFQAAAAAdAAAAABAw
