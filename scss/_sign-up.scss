@@ -1,0 +1,59 @@
+.home {
+  font-family: "Baloo 2", cursive;
+  .pic-area {
+    height: 100vh;
+    padding-top: 35vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, rgba(grey, 0.9), rgba(grey, 0.3)),
+      url("../img/image-5.jpg") center top no-repeat;
+    background-size: cover;
+    font-family: "Marck Script", cursive;
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 800;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    h2 {
+      font-size: 36px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .pic-area-text {
+      padding: 1rem;
+      background: rgba(71, 71, 71, 0.2);
+    }
+
+    .btn-order {
+      cursor: pointer;
+      font-family: "Baloo 2", cursive;
+      text-decoration: none;
+      outline: none;
+      padding: 0.5rem;
+      margin: 0.5rem;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      background: $primary-color;
+      border: 1px solid black;
+      @include transition-ease;
+
+      &:hover {
+        background: $hover-color;
+      }
+    }
+  }
+
+  footer {
+    background-color: $secondary-color;
+  }
+}
