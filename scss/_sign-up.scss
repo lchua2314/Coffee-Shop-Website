@@ -30,6 +30,7 @@
     }
 
     .pic-area-text {
+      font-size: 1.5rem;
       padding: 1rem;
       background: rgba(71, 71, 71, 0.2);
     }
@@ -39,8 +40,7 @@
       font-family: "Baloo 2", cursive;
       text-decoration: none;
       outline: none;
-      padding: 0.5rem;
-      margin: 0.5rem;
+      padding: 0.5rem 1.5rem;
       font-size: 1rem;
       letter-spacing: 1px;
       background: $primary-color;

@@ -59,13 +59,16 @@
       <section class="sign-in">
         <div class="pic-area">
           <div class="pic-area-text">
-            <h2>Welcome to</h2>
-            <h1 class="home__name">
-              <span class="logo-first">Drip</span>
-              <span class="logo-last">Cafe</span>
-            </h1>
-            <h3>Where coffee and comfort come together</h3>
-            <button class="btn-order">Order Now!</button>
+        <div id="login-box">
+          <form name="login-form" action="index.html" method="post">
+            <label>Email: </label>
+            <input type="text" placeholder="Email" name="userid" id="userid" pattern="[a-zA-Z0-9]+" required />
+            <!-- minlength="10" does not work probably bc you need to use the submit button--><br />
+            <label>Password: </label>
+            <input type="password" placeholder="Password" name="pswrd" id="pswrd" /><br />
+            <br />
+          </form>
+            <button class="btn-order">Login</button>
           </div>
         </div>
 
