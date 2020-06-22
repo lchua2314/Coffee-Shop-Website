@@ -49,6 +49,15 @@
       background-color: black;
       color: $primary-color;
       outline: none;
+      border: 1px solid $primary-color;
+    }
+
+    #username-display {
+      font-size: 2rem;
+      margin: 1rem;
+      font-weight: 800;
+      text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0 rgb(37, 37, 37),
+        -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
     }
 
     .btn-order {
