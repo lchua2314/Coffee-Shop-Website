@@ -2,13 +2,13 @@
 const sendBtn = document.querySelector("#login-btn");
 const usernameIn = document.querySelector("#userid");
 const usernameOut = document.querySelector("#username-display");
-const usernameOut2 = document.querySelector(".sign-in");
+const usernameOutNavBar = document.querySelector(".sign-in");
 const passwordIn = document.querySelector("#pswrd");
-const formJS = document.querySelector("#login-form");
+const loginForm = document.querySelector("#login-form");
 
 if (sendBtn) {
   sendBtn.addEventListener("click", createNewUsername);
-  formJS.addEventListener("submit", (event) => {
+  loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
   });
 }
@@ -25,7 +25,8 @@ function createNewUsername() {
       "Please enter a password that is at least 8 character long.";
   } else {
     usernameOut.innerHTML = username;
-    usernameOut2.innerHTML = '<i class="fas fa-user"></i> ' + usernameIn.value;
+    usernameOutNavBar.innerHTML =
+      '<i class="fas fa-user"></i> ' + usernameIn.value;
     Storage.setUsername(usernameIn.value);
     usernameIn.value = "";
     passwordIn.value = "";
@@ -45,6 +46,6 @@ class Storage {
 document.addEventListener("DOMContentLoaded", () => {
   let user = Storage.getUsername();
   if (user !== null) {
-    usernameOut2.innerHTML = '<i class="fas fa-user"></i> ' + user;
+    usernameOutNavBar.innerHTML = '<i class="fas fa-user"></i> ' + user;
   }
 });
