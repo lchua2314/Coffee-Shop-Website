@@ -12,13 +12,13 @@ const formJS = document.querySelector("form");
 // }
 
 if (sendBtn) {
-  sendBtn.addEventListener("click", updateUsername);
+  sendBtn.addEventListener("click", createNewUsername);
   formJS.addEventListener("submit", (event) => {
     event.preventDefault();
   });
 }
 
-function updateUsername() {
+function createNewUsername() {
   let username =
       'Currently logged in as: <br> <i class="fas fa-user"></i> ' +
       usernameIn.value,
@@ -33,8 +33,26 @@ function updateUsername() {
   } else {
     usernameOut.innerHTML = username;
     usernameOut2.innerHTML = '<i class="fas fa-user"></i> ' + usernameIn.value;
+    Storage.setUsername(usernameIn.value);
     // usernameGlobal = true;
     usernameIn.value = "";
     passwordIn.value = "";
+    sendBtn.innerHTML = "Sign Out";
   }
 }
+
+class Storage {
+  static setUsername(inputUsername) {
+    localStorage.setItem("username", inputUsername);
+  }
+  static getUsername() {
+    return localStorage.getItem("username"); // Will return null if username is not found
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  let user = Storage.getUsername();
+  if (user !== null) {
+    usernameOut2.innerHTML = '<i class="fas fa-user"></i> ' + user;
+  }
+});
