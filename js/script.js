@@ -6,13 +6,6 @@ const usernameOutNavBar = document.querySelector(".sign-in");
 const passwordIn = document.querySelector("#pswrd");
 const loginForm = document.querySelector("#login-form");
 
-if (sendBtn) {
-  sendBtn.addEventListener("click", createNewUsername);
-  loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-  });
-}
-
 function createNewUsername() {
   let username =
       'Currently logged in as: <br> <i class="fas fa-user"></i> ' +
@@ -31,6 +24,7 @@ function createNewUsername() {
     usernameIn.value = "";
     passwordIn.value = "";
     sendBtn.innerHTML = "Sign Out";
+    loginForm.innerHTML = "";
   }
 }
 
@@ -45,7 +39,32 @@ class Storage {
 
 document.addEventListener("DOMContentLoaded", () => {
   let user = Storage.getUsername();
-  if (user !== null) {
+  if (user) {
     usernameOutNavBar.innerHTML = '<i class="fas fa-user"></i> ' + user;
+    if (loginForm) {
+      loginForm.innerHTML = "";
+      usernameOut.innerHTML =
+        'Currently logged in as: <br> <i class="fas fa-user"></i> ' + user;
+    }
+  }
+
+  if (sendBtn) {
+    if (!user) {
+      sendBtn.addEventListener("click", createNewUsername);
+      loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    } else {
+      sendBtn.innerHTML = "Sign Out";
+      sendBtn.addEventListener("click", signOut);
+      loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    }
   }
 });
+
+function signOut() {
+  localStorage.clear();
+  location.reload();
+}
