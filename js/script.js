@@ -28,18 +28,18 @@ class Storage {
   }
 }
 
-let user = Storage.getUsername();
-if (user) {
-  usernameOutNavBar.innerHTML = '<i class="fas fa-user"></i> ' + user;
+let currUser = Storage.getUsername();
+if (currUser) {
+  usernameOutNavBar.innerHTML = '<i class="fas fa-user"></i> ' + currUser;
   if (loginForm) {
     loginForm.innerHTML = "";
     usernameOut.innerHTML =
-      'Currently logged in as: <br> <i class="fas fa-user"></i> ' + user;
+      'Currently logged in as: <br> <i class="fas fa-user"></i> ' + currUser;
   }
 }
 
 if (sendBtn) {
-  if (!user) {
+  if (!currUser) {
     sendBtn.addEventListener("click", createNewUsername);
     loginForm.addEventListener("submit", (event) => {
       event.preventDefault();
