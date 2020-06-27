@@ -3,6 +3,8 @@ const sendBtn = document.querySelector("#login-btn");
 const usernameIn = document.querySelector("#userid");
 const usernameOut = document.querySelector("#username-display");
 const usernameOutNavBar = document.querySelector(".sign-in");
+const signUpNavBar = document.querySelector(".sign-up");
+const slashNavBar = document.querySelector("#slash");
 const passwordIn = document.querySelector("#pswrd");
 const loginForm = document.querySelector("#login-form");
 
@@ -31,6 +33,8 @@ class Storage {
 let currUser = Storage.getUsername();
 if (currUser) {
   usernameOutNavBar.innerHTML = '<i class="fas fa-user"></i> ' + currUser;
+  signUpNavBar.innerHTML = "";
+  slashNavBar.innerHTML = "";
   if (loginForm) {
     loginForm.innerHTML = "";
     usernameOut.innerHTML =
