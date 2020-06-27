@@ -25,6 +25,7 @@ function createNewUsername() {
     passwordIn.value = "";
     sendBtn.innerHTML = "Sign Out";
     loginForm.innerHTML = "";
+    location.reload();
   }
 }
 
@@ -56,15 +57,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     } else {
       sendBtn.innerHTML = "Sign Out";
-      sendBtn.addEventListener("click", signOut);
+      sendBtn.addEventListener("click", () => {
+        localStorage.clear();
+        location.reload();
+      });
       loginForm.addEventListener("submit", (event) => {
         event.preventDefault();
       });
     }
   }
 });
-
-function signOut() {
-  localStorage.clear();
-  location.reload();
-}
