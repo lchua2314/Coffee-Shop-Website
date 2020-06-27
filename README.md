@@ -1,3 +1,7 @@
+# IMPORTANT
+
+Do not put real info into this website.
+
 # Coffee-Shop-Website
 
 # References

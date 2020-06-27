@@ -79,6 +79,15 @@
                 action="index.html"
                 method="post"
               >
+                <label>Email: </label> <br />
+                <input
+                  type="email"
+                  name="email"
+                  id="emailid"
+                  pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/"
+                  required
+                />
+                <br />
                 <label>Username: </label> <br />
                 <input
                   type="text"
@@ -93,7 +102,7 @@
                 <br />
               </form>
               <div id="username-display"></div>
-              <button class="btn-order" id="login-btn">Login</button>
+              <button class="btn-order" id="login-btn">Sign Up</button>
             </div>
             <div class="icons">
               <a href="#!">
