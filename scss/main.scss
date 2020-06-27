@@ -5,6 +5,7 @@
 @import "services";
 @import "contact";
 @import "sign-in";
+@import "sign-up";
 @import "responsive";
 
 html {
@@ -29,13 +30,20 @@ header {
       color: rgb(224, 224, 224);
     }
 
-    .sign-in {
-      font-family: "Baloo 2", cursive;
+    .sign-in,
+    .sign-up {
       font-size: 1rem;
+      margin-right: 0rem;
     }
 
-    .sign-in.active {
+    .sign-in.active,
+    .sign-up.active {
       color: $primary-color;
+    }
+
+    #slash {
+      color: white;
+      margin: 0 0.5rem;
     }
 
     ul li {
