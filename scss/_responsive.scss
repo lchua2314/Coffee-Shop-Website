@@ -35,6 +35,49 @@
       }
     }
   }
+
+  .sign-up,
+  .sign-in {
+    .pic-area {
+      height: 100vh;
+      padding-top: 35vh;
+      overflow: hidden;
+
+      label {
+        font-size: 1.5rem;
+      }
+
+      .pic-area-text {
+        padding: 0.25rem;
+        background: rgba(71, 71, 71, 0.2);
+      }
+
+      input {
+        font-size: 1rem;
+        border: 1px solid $primary-color;
+      }
+
+      #username-display {
+        font-size: 1rem;
+        margin: 0.5rem;
+      }
+
+      .btn-order {
+        padding: 0.25rem 1rem;
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+      }
+
+      .icons {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+
+        a {
+          margin: 0.25rem;
+        }
+      }
+    }
+  }
 }
 
 @include media-lg {

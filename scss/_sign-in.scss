@@ -21,6 +21,10 @@
         -1px 1px 0 rgb(37, 37, 37), 1px 1px 0 rgb(37, 37, 37);
     }
 
+    label {
+      font-size: 2.5rem;
+    }
+
     h1 {
       font-size: 48px;
     }
@@ -36,10 +40,6 @@
     .pic-area-text {
       padding: 1rem;
       background: rgba(71, 71, 71, 0.2);
-    }
-
-    label {
-      font-size: 2.5rem;
     }
 
     input {
@@ -74,20 +74,6 @@
 
       &:hover {
         background: $hover-color;
-      }
-    }
-
-    .sections {
-      font-family: "Baloo 2", cursive;
-      display: grid;
-      padding: 2rem 0;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 1rem;
-      font-size: 1.5rem;
-      &-section {
-        background-color: rgba(182, 111, 45, 0.75);
-        padding: 1rem;
-        margin: 1rem;
       }
     }
 
