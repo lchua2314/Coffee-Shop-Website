@@ -1,5 +1,5 @@
 // Login Interaction
-const sendBtn = document.querySelector("#login-btn");
+const loginBtn = document.querySelector("#login-btn");
 const signUpBtn = document.querySelector("#sign-up-btn");
 const usernameIn = document.querySelector("#userid");
 const emailIn = document.querySelector("#emailid");
@@ -71,15 +71,15 @@ if (currUser) {
   }
 }
 
-if (sendBtn) {
+if (loginBtn) {
   if (!currUser) {
-    sendBtn.addEventListener("click", checkUsername);
+    loginBtn.addEventListener("click", checkUsername);
     loginForm.addEventListener("submit", (event) => {
       event.preventDefault();
     });
   } else {
-    sendBtn.innerHTML = "Sign Out";
-    sendBtn.addEventListener("click", () => {
+    loginBtn.innerHTML = "Sign Out";
+    loginBtn.addEventListener("click", () => {
       localStorage.removeItem("username");
       location.reload();
     });
