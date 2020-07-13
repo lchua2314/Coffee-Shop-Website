@@ -106,8 +106,3 @@ if (signUpBtn) {
     });
   }
 }
-
-/* Todo List:
-1. Username and password placed in localStorage
-2. Responsiveness of webpages sign in and sign up
-3. Add more sign up info. */
