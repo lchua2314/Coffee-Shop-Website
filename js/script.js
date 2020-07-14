@@ -106,3 +106,42 @@ if (signUpBtn) {
     });
   }
 }
+
+// Shopping Cart
+const cart = document.querySelector(".cart");
+const cartOpenBtn = document.querySelector(".cart__openBtn");
+const cartCloseBtn = document.querySelector(".cart__closeBtn");
+// const hyperLink = document.querySelector(".cart-content"); Do not use? Remove later
+const cartOverlay = document.querySelector(".cart-overlay");
+
+cartOpenBtn.addEventListener("click", function () {
+  cart.classList.add("showcart");
+  cartOverlay.classList.add("transparentBcg");
+  cartOpenBtn.classList.add("change");
+});
+
+cartCloseBtn.addEventListener("click", function () {
+  cart.classList.remove("showcart");
+  cartOverlay.classList.remove("transparentBcg");
+  cartOpenBtn.classList.remove("change");
+});
+
+// Navigation Bar
+/*
+const navbar = document.querySelector(".navbar");
+const navbarBtn = document.querySelector(".navbar__btn");
+const hyperLink = document.querySelector(".navbar-content");
+const navbarOverlay = document.querySelector(".navbar-overlay");
+
+navbarBtn.addEventListener("click", function () {
+  if (navbar.classList.contains("showNavbar")) {
+    navbar.classList.remove("showNavbar");
+    navbarOverlay.classList.remove("transparentBcg");
+    navbarBtn.classList.remove("change");
+  } else {
+    navbar.classList.add("showNavbar");
+    navbarOverlay.classList.add("transparentBcg");
+    navbarBtn.classList.add("change");
+  }
+});
+*/

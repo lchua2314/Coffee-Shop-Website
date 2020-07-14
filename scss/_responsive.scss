@@ -1,4 +1,17 @@
+@media screen and (min-width: 768px) {
+  /* Shopping Cart */
+  .cart {
+    width: 30vw;
+    min-width: 450px;
+  }
+}
+
 @include media-md {
+  /* Shopping Cart */
+  .cart {
+    width: 100%;
+  }
+
   .contact {
     .pic-area {
       padding-top: 20vh;

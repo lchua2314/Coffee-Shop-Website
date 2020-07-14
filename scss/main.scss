@@ -67,6 +67,67 @@ header {
       color: $primary-color;
     }
   }
+
+  /* Beginning of cart code */
+
+  /* Make this different */
+  .cart__openBtn {
+    cursor: pointer;
+  }
+
+  .cart__closeBtn {
+    cursor: pointer;
+    float: left;
+    font-size: 1.5rem;
+  }
+
+  .cart-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    @include transition-ease;
+    background: rgba(112, 112, 112, 0.5);
+    z-index: 2;
+    visibility: hidden;
+  }
+
+  .cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: "Baloo 2", cursive;
+    color: rgb(224, 224, 224);
+    height: 100%;
+    overflow: auto;
+    z-index: 3;
+    background: black;
+    padding: 1.5rem;
+    @include transition-ease;
+    border: 2px groove $secondary-color;
+    transform: translateX(100%);
+  }
+
+  .span-primary {
+    color: $primary-color;
+  }
+
+  .transparentBcg {
+    visibility: visible;
+  }
+
+  .showcart {
+    transform: translateX(0);
+  }
+
+  .close-cart {
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  /* End of cart code */
 }
 
 .mug-logo {
