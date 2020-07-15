@@ -111,7 +111,6 @@ if (signUpBtn) {
 const cart = document.querySelector(".cart");
 const cartOpenBtn = document.querySelector(".cart__openBtn");
 const cartCloseBtn = document.querySelector(".cart__closeBtn");
-// const hyperLink = document.querySelector(".cart-content"); Do not use? Remove later
 const cartOverlay = document.querySelector(".cart-overlay");
 
 cartOpenBtn.addEventListener("click", function () {

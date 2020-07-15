@@ -69,16 +69,19 @@ header {
   }
 
   /* Beginning of cart code */
-
-  /* Make this different */
-  .cart__openBtn {
+  .cart__openBtn,
+  .cart__closeBtn {
     cursor: pointer;
   }
 
   .cart__closeBtn {
-    cursor: pointer;
     float: left;
     font-size: 1.5rem;
+    @include transition-ease;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 
   .cart-overlay {
@@ -97,10 +100,6 @@ header {
     position: fixed;
     top: 0;
     right: 0;
-    text-align: center;
-    letter-spacing: 2px;
-    font-family: "Baloo 2", cursive;
-    color: rgb(224, 224, 224);
     height: 100%;
     overflow: auto;
     z-index: 3;
@@ -109,6 +108,10 @@ header {
     @include transition-ease;
     border: 2px groove $secondary-color;
     transform: translateX(100%);
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: "Baloo 2", cursive;
+    color: rgb(224, 224, 224);
   }
 
   .span-primary {
@@ -121,11 +124,6 @@ header {
 
   .showcart {
     transform: translateX(0);
-  }
-
-  .close-cart {
-    font-size: 1.7rem;
-    cursor: pointer;
   }
   /* End of cart code */
 }
