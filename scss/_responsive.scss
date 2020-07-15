@@ -1,6 +1,16 @@
 @media screen and (min-width: 768px) {
   /* Shopping Cart */
-  .cart {
+  .cart,
+  .one__view,
+  .two__view,
+  .three__view,
+  .four__view,
+  .five__view,
+  .six__view,
+  .seven__view,
+  .eight__view,
+  .nine__view,
+  .ten__view {
     width: 30vw;
     min-width: 450px;
   }
@@ -8,7 +18,17 @@
 
 @include media-md {
   /* Shopping Cart */
-  .cart {
+  .cart,
+  .one__view,
+  .two__view,
+  .three__view,
+  .four__view,
+  .five__view,
+  .six__view,
+  .seven__view,
+  .eight__view,
+  .nine__view,
+  .ten__view {
     width: 100%;
   }
 

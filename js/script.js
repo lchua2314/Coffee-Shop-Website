@@ -116,13 +116,11 @@ const cartOverlay = document.querySelector(".cart-overlay");
 cartOpenBtn.addEventListener("click", function () {
   cart.classList.add("showcart");
   cartOverlay.classList.add("transparentBcg");
-  cartOpenBtn.classList.add("change");
 });
 
 cartCloseBtn.addEventListener("click", function () {
   cart.classList.remove("showcart");
   cartOverlay.classList.remove("transparentBcg");
-  cartOpenBtn.classList.remove("change");
 });
 
 // Navigation Bar

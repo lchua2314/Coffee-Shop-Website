@@ -21,8 +21,6 @@ header {
 
   .nav {
     .logo {
-      padding: 0;
-      margin: 0;
       font-family: "Marck Script", cursive;
       float: left;
       font-size: 1.5rem;
@@ -75,7 +73,7 @@ header {
   }
 
   .cart__closeBtn {
-    float: left;
+    position: fixed;
     font-size: 1.5rem;
     @include transition-ease;
 
@@ -126,6 +124,72 @@ header {
     transform: translateX(0);
   }
   /* End of cart code */
+  /* Beginning of View code */
+  .one,
+  .two,
+  .three,
+  .four,
+  .five,
+  .six,
+  .seven,
+  .eight,
+  .nine,
+  .ten {
+    &__view__openBtn,
+    &__view__closeBtn {
+      cursor: pointer;
+    }
+
+    &__view__closeBtn {
+      float: right;
+      font-size: 1.5rem;
+      @include transition-ease;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    &__view-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include transition-ease;
+      background: rgba(112, 112, 112, 0.5);
+      z-index: 2;
+      visibility: hidden;
+    }
+
+    &__view {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      overflow: auto;
+      z-index: 3;
+      background: black;
+      padding: 1.5rem;
+      @include transition-ease;
+      border: 2px groove $secondary-color;
+      transform: translateX(-100%);
+      text-align: center;
+      letter-spacing: 2px;
+      font-family: "Baloo 2", cursive;
+      color: rgb(224, 224, 224);
+    }
+
+    &__transparentBcg {
+      /* This is required, but duplicated from the cart */
+      visibility: visible;
+    }
+
+    &__showview {
+      transform: translateX(0);
+    }
+  }
+  /* End of View code */
 }
 
 .mug-logo {
