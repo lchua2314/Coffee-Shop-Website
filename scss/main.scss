@@ -141,7 +141,8 @@ header {
     }
 
     &__view__closeBtn {
-      float: right;
+      position: fixed;
+      right: 5%;
       font-size: 1.5rem;
       @include transition-ease;
 
