@@ -1,5 +1,3 @@
-const html = document.querySelector("html");
-
 // View 1
 const view1 = document.querySelector(".one__view");
 const view1OpenBtn = document.querySelector(".one__view__openBtn");

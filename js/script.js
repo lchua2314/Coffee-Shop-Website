@@ -108,6 +108,7 @@ if (signUpBtn) {
 }
 
 // Shopping Cart
+const html = document.querySelector("html");
 const cart = document.querySelector(".cart");
 const cartOpenBtn = document.querySelector(".cart__openBtn");
 const cartCloseBtn = document.querySelector(".cart__closeBtn");
