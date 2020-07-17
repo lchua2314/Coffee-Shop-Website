@@ -108,6 +108,7 @@ if (signUpBtn) {
 }
 
 // Shopping Cart
+const html = document.querySelector("html");
 const cart = document.querySelector(".cart");
 const cartOpenBtn = document.querySelector(".cart__openBtn");
 const cartCloseBtn = document.querySelector(".cart__closeBtn");
@@ -116,11 +117,13 @@ const cartOverlay = document.querySelector(".cart-overlay");
 cartOpenBtn.addEventListener("click", function () {
   cart.classList.add("showcart");
   cartOverlay.classList.add("transparentBcg");
+  html.classList.add("no-scroll");
 });
 
 cartCloseBtn.addEventListener("click", function () {
   cart.classList.remove("showcart");
   cartOverlay.classList.remove("transparentBcg");
+  html.classList.remove("no-scroll");
 });
 
 // Navigation Bar
