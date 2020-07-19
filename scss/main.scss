@@ -13,6 +13,15 @@ html {
 
 header {
   .nav {
+    img {
+      background: $white-color;
+      width: 25px;
+      height: 25px;
+      padding: 0;
+      margin: 0;
+      border: 3px solid $white-color;
+    }
+
     .menu-nav__item.active > a {
       color: $primary-color;
     }
@@ -200,10 +209,6 @@ header {
 
 .no-scroll {
   overflow: hidden;
-}
-
-.mug-logo {
-  color: $white-color;
 }
 
 .logo-first {
