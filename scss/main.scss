@@ -12,168 +12,9 @@ html {
 }
 
 header {
-  .menu-btn {
-    text-align: left;
-    position: fixed;
-    z-index: 1;
-    right: 1rem;
-    top: 1rem;
-    height: 20px;
-    width: 28px;
-    cursor: pointer;
-    @include transition-ease;
-
-    &__burger {
-      position: absolute;
-      right: 0;
-      top: 0.5rem;
-      width: 28px;
-      height: 3px;
-      background: $white-color;
-      @include transition-ease;
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: -8px;
-        width: 28px;
-        height: 3px;
-        background: $white-color;
-        @include transition-ease;
-      }
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 8px;
-        width: 28px;
-        height: 3px;
-        background: $white-color;
-        @include transition-ease;
-      }
-
-      &.open {
-        transform: rotate(720deg);
-        background: transparent;
-
-        &::before {
-          transform: rotate(45deg) translate(5px, 8px);
-        }
-
-        &::after {
-          width: 28px;
-          transform: rotate(-45deg) translate(3px, -7px);
-        }
-      }
-    }
-  }
-
   .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    opacity: 0.98;
-    visibility: hidden;
-
-    ul li {
-      display: inline;
-      font-family: "Baloo 2", cursive;
-    }
-
-    a {
-      outline: none;
-      color: white;
-      // font-size: 1.5rem;
-      // margin-right: 2rem;
-      text-decoration: none;
-      @include transition-ease;
-
-      &:hover {
-        color: $primary-color;
-      }
-    }
-
     .menu-nav__item.active > a {
       color: $primary-color;
-    }
-
-    &.open {
-      visibility: visible;
-    }
-
-    .menu-nav {
-      display: flex;
-      flex-flow: column wrap;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-      background: black;
-      list-style-type: none;
-      padding-right: 1rem;
-      transform: translateY(-100%);
-      @include transition-ease;
-
-      &.open {
-        transform: translateY(0);
-      }
-
-      &__item {
-        transform: translateX(100vw);
-        @include transition-ease;
-
-        &.open {
-          transform: translateX(0);
-        }
-
-        &.active > a {
-          color: $primary-color;
-        }
-      }
-
-      &__link {
-        display: inline-block;
-        font-size: 2rem;
-        text-transform: uppercase;
-        padding: 1rem 0;
-        font-weight: 300;
-        @include transition-ease;
-
-        &:hover {
-          color: $primary-color;
-        }
-      }
-    }
-
-    .logo {
-      font-family: "Marck Script", cursive;
-      // float: left;
-      font-size: 2rem;
-      color: $white-color;
-      text-transform: none;
-    }
-
-    .sign-in,
-    .sign-up {
-      font-size: 1.5rem;
-      margin-right: 0rem;
-    }
-
-    .sign-in.active,
-    .sign-up.active {
-      color: $primary-color;
-    }
-
-    #slash {
-      color: white;
-      margin: 0 0.5rem;
-    }
-  }
-
-  @for $i from 1 through 7 {
-    .menu-nav__item:nth-child(#{$i}) {
-      transition-delay: ($i * 0.1s) + 0.15s;
     }
   }
 
@@ -201,7 +42,7 @@ header {
     height: 100%;
     @include transition-ease;
     background: rgba(112, 112, 112, 0.5);
-    z-index: 2;
+    z-index: 4;
     visibility: hidden;
   }
 
@@ -211,7 +52,7 @@ header {
     right: 0;
     height: 100%;
     overflow: auto;
-    z-index: 3;
+    z-index: 5;
     background: black;
     padding: 1.5rem;
     @include transition-ease;
@@ -271,7 +112,7 @@ header {
       height: 100%;
       @include transition-ease;
       background: rgba(112, 112, 112, 0.5);
-      z-index: 2;
+      z-index: 4;
       visibility: hidden;
     }
 
@@ -281,7 +122,7 @@ header {
       left: 0;
       height: 100%;
       overflow: auto;
-      z-index: 3;
+      z-index: 5;
       background: black;
       padding: 1.5rem;
       @include transition-ease;
