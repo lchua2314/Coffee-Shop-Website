@@ -1,30 +1,81 @@
 @media screen and (min-width: 768px) {
-  /* Start of Navbar mobile */
+  // Desktop
+  /* Start of Navbar Desktop */
   .menu-btn {
     visibility: hidden;
   }
 
-  .nav {
-    visibility: visible;
+  header {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    padding: 1rem;
+    background: black;
+    text-align: right;
 
-    .menu-nav {
-      display: block;
-      transform: translateY(0);
-      height: 100%;
-      background: transparent;
-      text-align: right;
+    .nav {
+      visibility: visible;
 
-      &__item {
-        display: inline;
-        padding-right: 1.5rem;
+      .menu-nav {
+        display: block;
+        transform: translateY(0);
+        height: 100%;
+        background: transparent;
+        text-align: right;
+
+        &__item {
+          display: inline;
+          padding-right: 1.5rem;
+        }
+
+        &__link {
+          font-size: 1.5rem;
+        }
       }
 
-      &__link {
+      .logo {
+        font-family: "Marck Script", cursive;
+        float: left;
         font-size: 1.5rem;
+        color: $white-color;
+      }
+
+      .sign-in,
+      .sign-up {
+        font-size: 1rem;
+        margin-right: 0rem;
+      }
+
+      .sign-in.active,
+      .sign-up.active {
+        color: $primary-color;
+      }
+
+      #slash {
+        color: white;
+        margin: 0 0.5rem;
+      }
+
+      ul li {
+        display: inline;
+        font-family: "Baloo 2", cursive;
+      }
+
+      a {
+        outline: none;
+        color: white;
+        font-size: 1.5rem;
+        margin-right: 2rem;
+        text-decoration: none;
+        @include transition-ease;
+
+        &:hover {
+          color: $primary-color;
+        }
       }
     }
   }
-  /* End of Navbar mobile */
+  /* End of Navbar Desktop */
 
   /* Shopping Cart and View Button*/
   .cart,
