@@ -76,29 +76,6 @@ header {
     opacity: 0.98;
     visibility: hidden;
 
-    .logo {
-      font-family: "Marck Script", cursive;
-      float: left;
-      font-size: 1.5rem;
-      color: $white-color;
-    }
-
-    .sign-in,
-    .sign-up {
-      font-size: 1rem;
-      margin-right: 0rem;
-    }
-
-    .sign-in.active,
-    .sign-up.active {
-      color: $primary-color;
-    }
-
-    #slash {
-      color: white;
-      margin: 0 0.5rem;
-    }
-
     ul li {
       display: inline;
       font-family: "Baloo 2", cursive;
@@ -107,8 +84,8 @@ header {
     a {
       outline: none;
       color: white;
-      font-size: 1.5rem;
-      margin-right: 2rem;
+      // font-size: 1.5rem;
+      // margin-right: 2rem;
       text-decoration: none;
       @include transition-ease;
 
@@ -159,7 +136,7 @@ header {
         display: inline-block;
         font-size: 2rem;
         text-transform: uppercase;
-        padding: 2rem 0;
+        padding: 1rem 0;
         font-weight: 300;
         @include transition-ease;
 
@@ -168,9 +145,33 @@ header {
         }
       }
     }
+
+    .logo {
+      font-family: "Marck Script", cursive;
+      // float: left;
+      font-size: 2rem;
+      color: $white-color;
+      text-transform: none;
+    }
+
+    .sign-in,
+    .sign-up {
+      font-size: 1.5rem;
+      margin-right: 0rem;
+    }
+
+    .sign-in.active,
+    .sign-up.active {
+      color: $primary-color;
+    }
+
+    #slash {
+      color: white;
+      margin: 0 0.5rem;
+    }
   }
 
-  @for $i from 1 through 5 {
+  @for $i from 1 through 7 {
     .menu-nav__item:nth-child(#{$i}) {
       transition-delay: ($i * 0.1s) + 0.15s;
     }
