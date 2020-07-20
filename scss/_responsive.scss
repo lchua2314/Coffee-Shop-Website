@@ -1,6 +1,7 @@
 @media screen and (min-width: 768px) {
   // Desktop
   /* Start of Navbar Desktop */
+
   .menu-btn {
     visibility: hidden;
   }
@@ -100,6 +101,10 @@
 
 @include media-md {
   /* Start of Navbar Mobile */
+  .desktop-break {
+    visibility: hidden;
+  }
+
   .menu-btn {
     text-align: left;
     position: fixed;
@@ -164,6 +169,10 @@
     width: 100vw;
     opacity: 0.98;
     visibility: hidden;
+
+    br {
+      display: none;
+    }
 
     ul li {
       display: inline;
