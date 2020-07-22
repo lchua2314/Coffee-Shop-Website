@@ -83,6 +83,60 @@ header {
   .showcart {
     transform: translateX(0);
   }
+
+  .cart-item {
+    display: grid;
+    align-items: center;
+    /* Below: has three children */
+    /* image, text, buttons on the far right */
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: left;
+
+    img {
+      width: 125px;
+      height: 125px;
+      border-radius: 4rem;
+      padding: 0;
+      margin: 5%;
+      border: 5px solid $primary-color;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      margin: 0.25rem 0;
+    }
+
+    .item-amount {
+      text-align: center;
+    }
+
+    .remove-item {
+      color: grey;
+      cursor: pointer;
+      @include transition-ease;
+
+      &:hover {
+        color: $white-color;
+      }
+    }
+
+    .fa-chevron-up,
+    .fa-chevron-down {
+      color: $primary-color;
+      cursor: pointer;
+      @include transition-ease;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
   /* End of cart code */
   /* Beginning of View code */
   .one,
