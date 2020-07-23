@@ -2,6 +2,10 @@
   // Desktop
   /* Start of Navbar Desktop */
 
+  .no-scroll {
+    overflow: auto;
+  }
+
   .menu-btn {
     visibility: hidden;
   }
@@ -102,6 +106,10 @@
 
 @include media-md {
   /* Start of Navbar Mobile */
+
+  .no-scroll {
+    overflow: hidden;
+  }
 
   .menu-btn {
     text-align: left;

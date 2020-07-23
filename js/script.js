@@ -142,6 +142,7 @@ function toggleMenu() {
     hamburger.classList.add("open");
     nav.classList.add("open");
     menuNav.classList.add("open");
+    html.classList.add("no-scroll");
     navItems.forEach((item) => item.classList.add("open"));
 
     showMenu = true;
@@ -149,6 +150,7 @@ function toggleMenu() {
     hamburger.classList.remove("open");
     nav.classList.remove("open");
     menuNav.classList.remove("open");
+    html.classList.remove("no-scroll");
     navItems.forEach((item) => item.classList.remove("open"));
 
     showMenu = false;
