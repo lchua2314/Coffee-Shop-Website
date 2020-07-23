@@ -330,12 +330,23 @@
     }
   }
 
+  // Padding-top lowered in mobile because there is no heading navbar
+  .home,
+  .menu,
+  .services,
+  .contact {
+    .pic-area {
+      padding-top: 20vh;
+    }
+  }
+
   .sign-up,
   .sign-in {
     .pic-area {
-      height: 100vh;
-      padding-top: 35vh;
-      overflow: hidden;
+      // Remove the below if not needed later.
+      // height: 100vh;
+      // padding-top: 35vh;
+      // overflow: hidden;
 
       label {
         font-size: 1.5rem;
