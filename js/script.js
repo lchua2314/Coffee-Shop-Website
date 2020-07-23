@@ -126,26 +126,7 @@ cartCloseBtn.addEventListener("click", function () {
   html.classList.remove("no-scroll");
 });
 
-// Navigation Bar
-/*
-const navbar = document.querySelector(".navbar");
-const navbarBtn = document.querySelector(".navbar__btn");
-const hyperLink = document.querySelector(".navbar-content");
-const navbarOverlay = document.querySelector(".navbar-overlay");
-
-navbarBtn.addEventListener("click", function () {
-  if (navbar.classList.contains("showNavbar")) {
-    navbar.classList.remove("showNavbar");
-    navbarOverlay.classList.remove("transparentBcg");
-    navbarBtn.classList.remove("change");
-  } else {
-    navbar.classList.add("showNavbar");
-    navbarOverlay.classList.add("transparentBcg");
-    navbarBtn.classList.add("change");
-  }
-});
-*/
-
+// Navbar Mobile
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
 const nav = document.querySelector(".nav");

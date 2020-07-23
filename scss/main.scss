@@ -206,11 +206,10 @@ header {
   }
 
   img {
-    width: 350px;
-    height: 350px;
+    width: 325px;
+    height: 325px;
+    margin: 1.5rem 0;
     border-radius: 20rem;
-    padding: 0;
-    margin: 5%;
     border: 5px solid $primary-color;
   }
 
