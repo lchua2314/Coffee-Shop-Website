@@ -107,25 +107,6 @@ if (signUpBtn) {
   }
 }
 
-// Shopping Cart
-const html = document.querySelector("html");
-const cart = document.querySelector(".cart");
-const cartOpenBtn = document.querySelector(".cart__openBtn");
-const cartCloseBtn = document.querySelector(".cart__closeBtn");
-const cartOverlay = document.querySelector(".cart-overlay");
-
-cartOpenBtn.addEventListener("click", function () {
-  cart.classList.add("showcart");
-  cartOverlay.classList.add("transparentBcg");
-  html.classList.add("no-scroll");
-});
-
-cartCloseBtn.addEventListener("click", function () {
-  cart.classList.remove("showcart");
-  cartOverlay.classList.remove("transparentBcg");
-  html.classList.remove("no-scroll");
-});
-
 // Navbar Mobile
 const menuBtn = document.querySelector(".menu-btn");
 const hamburger = document.querySelector(".menu-btn__burger");
@@ -154,5 +135,125 @@ function toggleMenu() {
     navItems.forEach((item) => item.classList.remove("open"));
 
     showMenu = false;
+  }
+}
+
+// Shopping Cart Open and Close Function
+const html = document.querySelector("html");
+const cart = document.querySelector(".cart");
+const cartOpenBtn = document.querySelector(".cart__openBtn");
+const cartCloseBtn = document.querySelector(".cart__closeBtn");
+const cartOverlay = document.querySelector(".cart-overlay");
+
+cartOpenBtn.addEventListener("click", function () {
+  cart.classList.add("showcart");
+  cartOverlay.classList.add("transparentBcg");
+  html.classList.add("no-scroll");
+});
+
+cartCloseBtn.addEventListener("click", function () {
+  cart.classList.remove("showcart");
+  cartOverlay.classList.remove("transparentBcg");
+  html.classList.remove("no-scroll");
+});
+
+// Shopping Cart Adding Items to Cart
+const itemDisplay = document.querySelector(".item-display");
+const item1 = document.querySelector(".first__cart__button");
+let item1Amount, up1, down1, remove1;
+
+let item1Counter = 0; // Save this in local storage
+
+item1.addEventListener("click", function () {
+  if (item1Counter === 0) {
+    itemDisplay.innerHTML += `<div class="one1-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Americano</h3>
+      <h4>$2.10</h4>
+      <span class="remove-item-1">Remove</span>
+    </div>
+    <div>
+      <div class="item1Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount">1</p>
+      <div class="item1Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+    item1Amount = document.querySelector(".item-amount");
+    up1 = document.querySelector(".item1Up");
+    down1 = document.querySelector(".item1Down");
+    remove1 = document.querySelector(".remove-item-1");
+
+    up1.addEventListener("click", function () {
+      item1Amount.innerHTML++;
+      item1Counter++;
+    });
+
+    down1.addEventListener("click", function () {
+      item1Amount.innerHTML--;
+      item1Counter--;
+
+      if (item1Counter === 0) {
+        itemDisplay.innerHTML -= `<div class="one1-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Americano</h3>
+      <h4>$2.10</h4>
+      <span class="remove-item-1">Remove</span>
+    </div>
+    <div>
+      <div class="item1Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount">${item1Counter}</p>
+      <div class="item1Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+        checkCartEmpty();
+      }
+    });
+
+    remove1.addEventListener("click", function () {
+      itemDisplay.innerHTML -= `<div class="one1-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Americano</h3>
+      <h4>$2.10</h4>
+      <span class="remove-item-1">Remove</span>
+    </div>
+    <div>
+      <div class="item1Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount">${item1Counter}</p>
+      <div class="item1Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+      item1Counter = 0;
+      item1Amount.innerHTML = 0;
+      checkCartEmpty();
+    });
+  } else {
+    item1Amount.innerHTML++;
+  }
+  item1Counter++;
+});
+
+function checkCartEmpty() {
+  // if (isNaN(itemDisplay.innerHTML)) {
+  // This does not check if cart is empty.
+  if (item1Counter === 0) {
+    itemDisplay.innerHTML = "";
+    return true;
+  } else {
+    return false;
   }
 }

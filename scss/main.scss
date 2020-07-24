@@ -84,56 +84,87 @@ header {
     transform: translateX(0);
   }
 
-  .cart-item {
-    display: grid;
-    align-items: center;
-    /* Below: has three children */
-    /* image, text, buttons on the far right */
-    grid-template-columns: auto 1fr auto;
-    grid-column-gap: 1.5rem;
-    margin: 1.5rem 0;
-    text-align: left;
+  .item-display {
+    color: black;
+  }
 
-    img {
-      width: 125px;
-      height: 125px;
-      border-radius: 4rem;
-      padding: 0;
-      margin: 5%;
-      border: 5px solid $primary-color;
-    }
+  .one1,
+  .two2,
+  .three3,
+  .four4,
+  .five5,
+  .six6,
+  .seven7,
+  .eight8,
+  .nine9,
+  .ten10,
+  .eleven11,
+  .twelve12 {
+    &-cart-item {
+      display: grid;
+      align-items: center;
+      /* Below: has three children */
+      /* image, text, buttons on the far right */
+      grid-template-columns: auto 1fr auto;
+      grid-column-gap: 1.5rem;
+      margin: 1.5rem 0;
+      text-align: left;
+      color: $white-color;
 
-    h3 {
-      font-size: 1.25rem;
-    }
-
-    h4 {
-      font-size: 1.125rem;
-      margin: 0.25rem 0;
-    }
-
-    .item-amount {
-      text-align: center;
-    }
-
-    .remove-item {
-      color: grey;
-      cursor: pointer;
-      @include transition-ease;
-
-      &:hover {
-        color: $white-color;
+      img {
+        width: 125px;
+        height: 125px;
+        border-radius: 4rem;
+        padding: 0;
+        margin: 5%;
+        border: 5px solid $primary-color;
       }
-    }
 
-    .fa-chevron-up,
-    .fa-chevron-down {
-      color: $primary-color;
-      cursor: pointer;
-      @include transition-ease;
+      h3 {
+        font-size: 1.25rem;
+      }
 
-      &:hover {
-        color: $hover-color;
+      h4 {
+        font-size: 1.125rem;
+        margin: 0.25rem 0;
+      }
+
+      .item-amount {
+        text-align: center;
+      }
+
+      .remove-item {
+        &-1,
+        &-2,
+        &-3,
+        &-4,
+        &-5,
+        &-6,
+        &-7,
+        &-8,
+        &-9,
+        &-10,
+        &-11,
+        &-12 {
+          color: grey;
+          cursor: pointer;
+          @include transition-ease;
+
+          &:hover {
+            color: $white-color;
+          }
+        }
+      }
+
+      .fa-chevron-up,
+      .fa-chevron-down {
+        color: $primary-color;
+        cursor: pointer;
+        @include transition-ease;
+
+        &:hover {
+          color: $hover-color;
+        }
       }
     }
   }
