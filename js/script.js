@@ -1,3 +1,4 @@
+"use strict";
 // Login Interaction
 const loginBtn = document.querySelector("#login-btn");
 const signUpBtn = document.querySelector("#sign-up-btn");
@@ -158,15 +159,16 @@ cartCloseBtn.addEventListener("click", function () {
 });
 
 // Shopping Cart Adding Items to Cart
-const itemDisplay = document.querySelector(".item-display");
-const item1 = document.querySelector(".first__cart__button");
-let item1Amount, up1, down1, remove1;
 
+// Item 1: Caffe Americano
+const item1Display = document.querySelector(".item1-display");
+const item1 = document.querySelector(".one__cart__button");
+let item1Amount, up1, down1, remove1;
 let item1Counter = 0; // Save this in local storage
 
 item1.addEventListener("click", function () {
   if (item1Counter === 0) {
-    itemDisplay.innerHTML += `<div class="one1-cart-item">
+    item1Display.innerHTML += `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
     <div>
       <h3><span class="span-primary">Caffè</span> Americano</h3>
@@ -177,13 +179,13 @@ item1.addEventListener("click", function () {
       <div class="item1Up">
       <i class="fas fa-chevron-up"></i>
       </div>
-      <p class="item-amount">1</p>
+      <p class="item-amount1">1</p>
       <div class="item1Down">
       <i class="fas fa-chevron-down"></i>
       </div>
     </div>
           </div >`;
-    item1Amount = document.querySelector(".item-amount");
+    item1Amount = document.querySelector(".item-amount1");
     up1 = document.querySelector(".item1Up");
     down1 = document.querySelector(".item1Down");
     remove1 = document.querySelector(".remove-item-1");
@@ -198,7 +200,7 @@ item1.addEventListener("click", function () {
       item1Counter--;
 
       if (item1Counter === 0) {
-        itemDisplay.innerHTML -= `<div class="one1-cart-item">
+        item1Display.innerHTML -= `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
     <div>
       <h3><span class="span-primary">Caffè</span> Americano</h3>
@@ -209,18 +211,18 @@ item1.addEventListener("click", function () {
       <div class="item1Up">
       <i class="fas fa-chevron-up"></i>
       </div>
-      <p class="item-amount">${item1Counter}</p>
+      <p class="item-amount1">${item1Counter}</p>
       <div class="item1Down">
       <i class="fas fa-chevron-down"></i>
       </div>
     </div>
           </div >`;
-        checkCartEmpty();
+        checkCartEmpty1();
       }
     });
 
     remove1.addEventListener("click", function () {
-      itemDisplay.innerHTML -= `<div class="one1-cart-item">
+      item1Display.innerHTML -= `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
     <div>
       <h3><span class="span-primary">Caffè</span> Americano</h3>
@@ -231,7 +233,7 @@ item1.addEventListener("click", function () {
       <div class="item1Up">
       <i class="fas fa-chevron-up"></i>
       </div>
-      <p class="item-amount">${item1Counter}</p>
+      <p class="item-amount1">${item1Counter}</p>
       <div class="item1Down">
       <i class="fas fa-chevron-down"></i>
       </div>
@@ -239,7 +241,7 @@ item1.addEventListener("click", function () {
           </div >`;
       item1Counter = 0;
       item1Amount.innerHTML = 0;
-      checkCartEmpty();
+      checkCartEmpty1();
     });
   } else {
     item1Amount.innerHTML++;
@@ -247,11 +249,112 @@ item1.addEventListener("click", function () {
   item1Counter++;
 });
 
-function checkCartEmpty() {
+function checkCartEmpty1() {
   // if (isNaN(itemDisplay.innerHTML)) {
   // This does not check if cart is empty.
   if (item1Counter === 0) {
-    itemDisplay.innerHTML = "";
+    item1Display.innerHTML = "";
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// Item 2: Caffe Misto
+const item2Display = document.querySelector(".item2-display");
+const item2 = document.querySelector(".two__cart__button");
+let item2Amount, up2, down2, remove2;
+
+let item2Counter = 0; // Save this in local storage
+
+item2.addEventListener("click", function () {
+  if (item2Counter === 0) {
+    item2Display.innerHTML += `<div class="two2-cart-item">
+  <img src="../img/caffe-misto.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Misto</h3>
+      <h4>$2.60</h4>
+      <span class="remove-item-2">Remove</span>
+    </div>
+    <div>
+      <div class="item2Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount2">1</p>
+      <div class="item2Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+    item2Amount = document.querySelector(".item-amount2");
+    up2 = document.querySelector(".item2Up");
+    down2 = document.querySelector(".item2Down");
+    remove2 = document.querySelector(".remove-item-2");
+
+    up2.addEventListener("click", function () {
+      item2Amount.innerHTML++;
+      item2Counter++;
+    });
+
+    down2.addEventListener("click", function () {
+      item2Amount.innerHTML--;
+      item2Counter--;
+
+      if (item2Counter === 0) {
+        item2Display.innerHTML -= `<div class="two2-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Americano</h3>
+      <h4>$2.10</h4>
+      <span class="remove-item-2">Remove</span>
+    </div>
+    <div>
+      <div class="item2Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount2">${item2Counter}</p>
+      <div class="item2Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+        checkCartEmpty2();
+      }
+    });
+
+    remove2.addEventListener("click", function () {
+      item2Display.innerHTML -= `<div class="one1-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Americano</h3>
+      <h4>$2.10</h4>
+      <span class="remove-item-2">Remove</span>
+    </div>
+    <div>
+      <div class="item2Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount2">${item2Counter}</p>
+      <div class="item2Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+      item2Counter = 0;
+      item2Amount.innerHTML = 0;
+      checkCartEmpty2();
+    });
+  } else {
+    item2Amount.innerHTML++;
+  }
+  item2Counter++;
+});
+
+function checkCartEmpty2() {
+  // if (isNaN(itemDisplay.innerHTML)) {
+  // This does not check if cart is empty.
+  if (item2Counter === 0) {
+    item2Display.innerHTML = "";
     return true;
   } else {
     return false;
