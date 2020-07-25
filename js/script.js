@@ -160,6 +160,19 @@ cartCloseBtn.addEventListener("click", function () {
 
 // Shopping Cart Adding Items to Cart
 
+const total = document.querySelector(".total");
+let totalAmount = 0;
+
+function updateTotal(moneyChange) {
+  totalAmount += moneyChange;
+  total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
+    2
+  )}`;
+  if (totalAmount == -0) {
+    total.innerHTML = `<span class="span-primary">Total Amount:</span> $0.00`;
+  }
+}
+
 // Item 1: Caffe Americano
 const item1Display = document.querySelector(".item1-display");
 const item1 = document.querySelector(".one__cart__button");
@@ -193,11 +206,13 @@ item1.addEventListener("click", function () {
     up1.addEventListener("click", function () {
       item1Amount.innerHTML++;
       item1Counter++;
+      updateTotal(2.1);
     });
 
     down1.addEventListener("click", function () {
       item1Amount.innerHTML--;
       item1Counter--;
+      updateTotal(-2.1);
 
       if (item1Counter === 0) {
         item1Display.innerHTML -= `<div class="one1-cart-item">
@@ -239,6 +254,7 @@ item1.addEventListener("click", function () {
       </div>
     </div>
           </div >`;
+      updateTotal(-2.1 * item1Counter);
       item1Counter = 0;
       item1Amount.innerHTML = 0;
       checkCartEmpty1();
@@ -247,6 +263,7 @@ item1.addEventListener("click", function () {
     item1Amount.innerHTML++;
   }
   item1Counter++;
+  updateTotal(2.1);
 });
 
 function checkCartEmpty1() {
@@ -255,9 +272,8 @@ function checkCartEmpty1() {
   if (item1Counter === 0) {
     item1Display.innerHTML = "";
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 // Item 2: Caffe Misto
@@ -294,11 +310,13 @@ item2.addEventListener("click", function () {
     up2.addEventListener("click", function () {
       item2Amount.innerHTML++;
       item2Counter++;
+      updateTotal(2.6);
     });
 
     down2.addEventListener("click", function () {
       item2Amount.innerHTML--;
       item2Counter--;
+      updateTotal(-2.6);
 
       if (item2Counter === 0) {
         item2Display.innerHTML -= `<div class="two2-cart-item">
@@ -340,6 +358,7 @@ item2.addEventListener("click", function () {
       </div>
     </div>
           </div >`;
+      updateTotal(-2.6 * item2Counter);
       item2Counter = 0;
       item2Amount.innerHTML = 0;
       checkCartEmpty2();
@@ -348,6 +367,7 @@ item2.addEventListener("click", function () {
     item2Amount.innerHTML++;
   }
   item2Counter++;
+  updateTotal(2.6);
 });
 
 function checkCartEmpty2() {
@@ -356,7 +376,6 @@ function checkCartEmpty2() {
   if (item2Counter === 0) {
     item2Display.innerHTML = "";
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
