@@ -185,9 +185,17 @@ if (!localStorage.getItem("total")) {
 function updateTotal(moneyChange) {
   totalAmount += moneyChange;
   localStorage.setItem("total", totalAmount.toString());
-  total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
-    2
-  )}`;
+  if (totalAmount > 1) {
+    total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
+      2
+    )}`;
+  } else {
+    total.innerHTML = `<br>
+      <br>
+      Your Shopping Cart is empty. <br>
+        Add items to cart by hovering over / tapping on the images of products
+    on the Menu page.`;
+  }
 }
 
 const item1Display = document.querySelector(".item1-display");
@@ -251,7 +259,6 @@ if (document.querySelector(".one__cart__button")) {
         item1Display.innerHTML = "";
         updateTotal(-2.1 * item1Counter);
         item1Counter = 0;
-        // item1Amount.innerHTML = 0;
         Storage.removeAmount("item1");
       });
     } else {
@@ -423,7 +430,6 @@ if (checkStorageForCart()) {
       item1Display.innerHTML = "";
       updateTotal(-2.1 * item1Counter);
       item1Counter = 0;
-      // item1Amount.innerHTML = 0;
       Storage.removeAmount("item1");
     });
   }
