@@ -165,21 +165,36 @@ cartCloseBtn.addEventListener("click", function () {
 });
 
 // Shopping Cart Adding Items to Cart
-let item1Amount, up1, down1, remove1;
+const total = document.querySelector(".total");
+let item1Amount, up1, down1, remove1, totalAmount;
+
+// Establish totalAmount in local storage if not there already.
+if (!localStorage.getItem("total")) {
+  localStorage.setItem("total", "0");
+  console.log("FRESH TOTAL!");
+} else {
+  totalAmount = parseFloat(localStorage.getItem("total"));
+  console.log(totalAmount);
+  updateTotal(0);
+}
+
+/**
+ * Updates total in the local storage and class "total" in the DOM
+ * @param {Float} moneyChange
+ */
+function updateTotal(moneyChange) {
+  totalAmount += moneyChange;
+  localStorage.setItem("total", totalAmount.toString());
+  total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
+    2
+  )}`;
+}
+
+const item1Display = document.querySelector(".item1-display");
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
-  const total = document.querySelector(".total");
-  let totalAmount = 0;
-
-  function updateTotal(moneyChange) {
-    totalAmount += moneyChange;
-    total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
-      2
-    )}`;
-  }
-
   // Item 1: Caffe Americano
-  const item1Display = document.querySelector(".item1-display");
   const item1Button = document.querySelector(".one__cart__button");
   // let item1Amount, up1, down1, remove1;
   let item1Counter;
@@ -214,81 +229,38 @@ if (document.querySelector(".one__cart__button")) {
       remove1 = document.querySelector(".remove-item-1");
 
       up1.addEventListener("click", function () {
-        item1Amount.innerHTML++;
         item1Counter++;
+        item1Amount.innerHTML = item1Counter;
         updateTotal(2.1);
         Storage.setAmount("item1", item1Counter);
       });
 
       down1.addEventListener("click", function () {
-        item1Amount.innerHTML--;
         item1Counter--;
+        item1Amount.innerHTML = item1Counter;
         updateTotal(-2.1);
         Storage.setAmount("item1", item1Counter);
 
         if (item1Counter === 0) {
-          item1Display.innerHTML -= `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Americano</h3>
-      <h4>$2.10</h4>
-      <span class="remove-item-1">Remove</span>
-    </div>
-    <div>
-      <div class="item1Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount1">${item1Counter}</p>
-      <div class="item1Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-          checkCartEmpty1();
+          item1Display.innerHTML = "";
           Storage.removeAmount("item1");
         }
       });
 
       remove1.addEventListener("click", function () {
-        item1Display.innerHTML -= `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Americano</h3>
-      <h4>$2.10</h4>
-      <span class="remove-item-1">Remove</span>
-    </div>
-    <div>
-      <div class="item1Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount1">${item1Counter}</p>
-      <div class="item1Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
+        item1Display.innerHTML = "";
         updateTotal(-2.1 * item1Counter);
         item1Counter = 0;
-        item1Amount.innerHTML = 0;
+        // item1Amount.innerHTML = 0;
         Storage.removeAmount("item1");
-        checkCartEmpty1();
       });
     } else {
       item1Amount.innerHTML++;
-      Storage.setAmount("item1", item1Counter);
     }
     item1Counter++;
     updateTotal(2.1);
     Storage.setAmount("item1", item1Counter);
   });
-
-  function checkCartEmpty1() {
-    if (item1Counter === 0) {
-      item1Display.innerHTML = "";
-      return true;
-    }
-    return false;
-  }
 
   // Item 2: Caffe Misto
   const item2Display = document.querySelector(".item2-display");
@@ -399,22 +371,11 @@ if (document.querySelector(".one__cart__button")) {
   }
 }
 
+// Check if there are items in the local storage
 if (checkStorageForCart()) {
-  const total = document.querySelector(".total");
-  let totalAmount = 0;
-
-  function updateTotal(moneyChange) {
-    totalAmount += moneyChange;
-    total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
-      2
-    )}`;
-  }
-
   if (localStorage.getItem("item1")) {
     // Item 1: Caffe Americano
-    const item1Display = document.querySelector(".item1-display");
     let item1Counter = parseInt(localStorage.getItem("item1"));
-    updateTotal(item1Counter * 2.1);
 
     item1Display.innerHTML += `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
@@ -440,56 +401,31 @@ if (checkStorageForCart()) {
     remove1 = document.querySelector(".remove-item-1");
 
     up1.addEventListener("click", function () {
-      item1Amount.innerHTML++;
       item1Counter++;
+      item1Amount.innerHTML = item1Counter;
       updateTotal(2.1);
       Storage.setAmount("item1", item1Counter);
     });
 
     down1.addEventListener("click", function () {
-      item1Amount.innerHTML--;
       item1Counter--;
+      item1Amount.innerHTML = item1Counter;
       updateTotal(-2.1);
       Storage.setAmount("item1", item1Counter);
 
       if (item1Counter === 0) {
-        checkCartEmpty1();
+        item1Display.innerHTML = "";
         Storage.removeAmount("item1");
       }
     });
 
     remove1.addEventListener("click", function () {
-      item1Display.innerHTML -= `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Americano</h3>
-      <h4>$2.10</h4>
-      <span class="remove-item-1">Remove</span>
-    </div>
-    <div>
-      <div class="item1Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount1">${item1Counter}</p>
-      <div class="item1Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
+      item1Display.innerHTML = "";
       updateTotal(-2.1 * item1Counter);
       item1Counter = 0;
-      item1Amount.innerHTML = 0;
+      // item1Amount.innerHTML = 0;
       Storage.removeAmount("item1");
-      checkCartEmpty1();
     });
-
-    function checkCartEmpty1() {
-      if (item1Counter === 0) {
-        item1Display.innerHTML = "";
-        return true;
-      }
-      return false;
-    }
   }
 }
 
