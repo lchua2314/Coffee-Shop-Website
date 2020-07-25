@@ -168,18 +168,15 @@ function updateTotal(moneyChange) {
   total.innerHTML = `<span class="span-primary">Total Amount:</span> $${totalAmount.toFixed(
     2
   )}`;
-  if (totalAmount == -0) {
-    total.innerHTML = `<span class="span-primary">Total Amount:</span> $0.00`;
-  }
 }
 
 // Item 1: Caffe Americano
 const item1Display = document.querySelector(".item1-display");
-const item1 = document.querySelector(".one__cart__button");
+const item1Button = document.querySelector(".one__cart__button");
 let item1Amount, up1, down1, remove1;
 let item1Counter = 0; // Save this in local storage
 
-item1.addEventListener("click", function () {
+item1Button.addEventListener("click", function () {
   if (item1Counter === 0) {
     item1Display.innerHTML += `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
@@ -267,8 +264,6 @@ item1.addEventListener("click", function () {
 });
 
 function checkCartEmpty1() {
-  // if (isNaN(itemDisplay.innerHTML)) {
-  // This does not check if cart is empty.
   if (item1Counter === 0) {
     item1Display.innerHTML = "";
     return true;
@@ -278,12 +273,12 @@ function checkCartEmpty1() {
 
 // Item 2: Caffe Misto
 const item2Display = document.querySelector(".item2-display");
-const item2 = document.querySelector(".two__cart__button");
+const item2Button = document.querySelector(".two__cart__button");
 let item2Amount, up2, down2, remove2;
 
 let item2Counter = 0; // Save this in local storage
 
-item2.addEventListener("click", function () {
+item2Button.addEventListener("click", function () {
   if (item2Counter === 0) {
     item2Display.innerHTML += `<div class="two2-cart-item">
   <img src="../img/caffe-misto.webp" alt="product" />
@@ -371,8 +366,6 @@ item2.addEventListener("click", function () {
 });
 
 function checkCartEmpty2() {
-  // if (isNaN(itemDisplay.innerHTML)) {
-  // This does not check if cart is empty.
   if (item2Counter === 0) {
     item2Display.innerHTML = "";
     return true;
