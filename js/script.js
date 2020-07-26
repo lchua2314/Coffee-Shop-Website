@@ -337,55 +337,7 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item1")) {
     // Item 1: Caffe Americano
     item1Counter = parseInt(localStorage.getItem("item1"));
-
-    item1Display.innerHTML += `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Americano</h3>
-      <h4>$2.10</h4>
-      <span class="remove-item-1">Remove</span>
-    </div>
-    <div>
-      <div class="item1Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount1">${item1Counter}</p>
-      <div class="item1Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-
-    item1Amount = document.querySelector(".item-amount1");
-    up1 = document.querySelector(".item1Up");
-    down1 = document.querySelector(".item1Down");
-    remove1 = document.querySelector(".remove-item-1");
-
-    up1.addEventListener("click", function () {
-      item1Counter++;
-      item1Amount.innerHTML = item1Counter;
-      updateTotal(2.1);
-      Storage.setAmount("item1", item1Counter);
-    });
-
-    down1.addEventListener("click", function () {
-      item1Counter--;
-      item1Amount.innerHTML = item1Counter;
-      updateTotal(-2.1);
-      Storage.setAmount("item1", item1Counter);
-
-      if (item1Counter === 0) {
-        item1Display.innerHTML = "";
-        Storage.removeAmount("item1");
-      }
-    });
-
-    remove1.addEventListener("click", function () {
-      item1Display.innerHTML = "";
-      updateTotal(-2.1 * item1Counter);
-      item1Counter = 0;
-      Storage.removeAmount("item1");
-    });
+    initializeItem1();
   }
 }
 
@@ -412,6 +364,9 @@ function checkStorageForCart() {
   return false;
 }
 
+/**
+ * Initializes item1 if it is already in the cart or needs to be added to the cart.
+ */
 function initializeItem1() {
   item1Display.innerHTML += `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
@@ -440,8 +395,6 @@ function initializeItem1() {
     item1Amount.innerHTML = item1Counter;
     updateTotal(2.1);
     Storage.setAmount("item1", item1Counter);
-    console.log("Up1: " + localStorage.getItem("item1"));
-    console.log("item1Counter: " + item1Counter);
   });
 
   down1.addEventListener("click", function () {
@@ -449,13 +402,10 @@ function initializeItem1() {
     item1Amount.innerHTML = item1Counter;
     updateTotal(-2.1);
     Storage.setAmount("item1", item1Counter);
-    console.log("Down1: " + localStorage.getItem("item1"));
-    console.log("item1Counter: " + item1Counter);
 
     if (item1Counter === 0) {
       item1Display.innerHTML = "";
       Storage.removeAmount("item1");
-      console.log("0: " + localStorage.getItem("item1"));
     }
   });
 
@@ -464,7 +414,5 @@ function initializeItem1() {
     updateTotal(-2.1 * item1Counter);
     item1Counter = 0;
     Storage.removeAmount("item1");
-    console.log("Remove1: " + localStorage.getItem("item1"));
-    console.log("item1Counter: " + item1Counter);
   });
 }
