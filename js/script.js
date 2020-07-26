@@ -263,6 +263,15 @@ if (localStorage.getItem("item7")) {
   item7Counter = 0;
 }
 
+// Item Display: Item 8: Cappuccino
+const item8Display = document.querySelector(".item8-display");
+let item8Counter, item8Amount, up8, down8, remove8;
+if (localStorage.getItem("item8")) {
+  item8Counter = parseInt(localStorage.getItem("item8"));
+} else {
+  item8Counter = 0;
+}
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
@@ -355,6 +364,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.25);
     Storage.setAmount("item7", item7Counter);
   });
+
+  // Item 8: Cappuccino
+  const item8Button = document.querySelector(".eight__cart__button");
+
+  item8Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item8")) {
+      initializeItem8();
+    }
+    item8Counter++;
+    item8Amount.innerHTML = item8Counter;
+    updateTotal(2.59);
+    Storage.setAmount("item8", item8Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -386,6 +408,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item7")) {
     // Item 7: Decaf Pike Place® Roast
     initializeItem7();
+  }
+  if (localStorage.getItem("item8")) {
+    // Item 8: Cappuccino
+    initializeItem8();
   }
 }
 
@@ -787,5 +813,59 @@ function initializeItem7() {
     updateTotal(-2.25 * item7Counter);
     item7Counter = 0;
     Storage.removeAmount("item7");
+  });
+}
+
+/**
+ * Initializes item8 if it is already in the cart or needs to be added to the cart.
+ * Cappuccino
+ */
+function initializeItem8() {
+  item8Display.innerHTML += `<div class="eight8-cart-item">
+  <img src="../img/cappuccino.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Cappu</span>ccino</h3>
+      <h4>$2.59</h4>
+      <span class="remove-item-8">Remove</span>
+    </div>
+    <div>
+      <div class="item8Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount8">${item8Counter}</p>
+      <div class="item8Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item8Amount = document.querySelector(".item-amount8");
+  up8 = document.querySelector(".item8Up");
+  down8 = document.querySelector(".item8Down");
+  remove8 = document.querySelector(".remove-item-8");
+
+  up8.addEventListener("click", function () {
+    item8Counter++;
+    item8Amount.innerHTML = item8Counter;
+    updateTotal(2.59);
+    Storage.setAmount("item8", item8Counter);
+  });
+
+  down8.addEventListener("click", function () {
+    item8Counter--;
+    item8Amount.innerHTML = item8Counter;
+    updateTotal(-2.59);
+    Storage.setAmount("item8", item8Counter);
+
+    if (item8Counter === 0) {
+      item8Display.innerHTML = "";
+      Storage.removeAmount("item8");
+    }
+  });
+
+  remove8.addEventListener("click", function () {
+    item8Display.innerHTML = "";
+    updateTotal(-2.59 * item8Counter);
+    item8Counter = 0;
+    Storage.removeAmount("item8");
   });
 }
