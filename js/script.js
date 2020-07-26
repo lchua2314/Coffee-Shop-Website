@@ -171,11 +171,9 @@ let totalAmount;
 // Establish totalAmount in local storage if not there already.
 if (!localStorage.getItem("total")) {
   localStorage.setItem("total", "0");
-  console.log("FRESH TOTAL!");
 } else {
   totalAmount = parseFloat(localStorage.getItem("total"));
   updateTotal(0);
-  console.log(totalAmount);
 }
 
 /**
@@ -297,6 +295,15 @@ if (localStorage.getItem("item11")) {
   item11Counter = parseInt(localStorage.getItem("item11"));
 } else {
   item11Counter = 0;
+}
+
+// Item Display: Item 12: Flat White
+const item12Display = document.querySelector(".item12-display");
+let item12Counter, item12Amount, up12, down12, remove12;
+if (localStorage.getItem("item12")) {
+  item12Counter = parseInt(localStorage.getItem("item12"));
+} else {
+  item12Counter = 0;
 }
 
 // Tests whether or not person is on the Menu page
@@ -443,6 +450,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.18);
     Storage.setAmount("item11", item11Counter);
   });
+
+  // Item 12: Flat White
+  const item12Button = document.querySelector(".twelve__cart__button");
+
+  item12Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item12")) {
+      initializeItem12();
+    }
+    item12Counter++;
+    item12Amount.innerHTML = item12Counter;
+    updateTotal(2.75);
+    Storage.setAmount("item12", item12Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -490,6 +510,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item11")) {
     // Item 11: Espresso Macchiato
     initializeItem11();
+  }
+  if (localStorage.getItem("item12")) {
+    // Item 12: Flat White
+    initializeItem12();
   }
 }
 
@@ -1107,5 +1131,59 @@ function initializeItem11() {
     updateTotal(-2.18 * item11Counter);
     item11Counter = 0;
     Storage.removeAmount("item11");
+  });
+}
+
+/**
+ * Initializes item12 if it is already in the cart or needs to be added to the cart.
+ * Flat White
+ */
+function initializeItem12() {
+  item12Display.innerHTML += `<div class="twelve12-cart-item">
+  <img src="../img/flat-white.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Flat</span> White</h3>
+      <h4>$2.75</h4>
+      <span class="remove-item-12">Remove</span>
+    </div>
+    <div>
+      <div class="item12Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount12">${item12Counter}</p>
+      <div class="item12Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item12Amount = document.querySelector(".item-amount12");
+  up12 = document.querySelector(".item12Up");
+  down12 = document.querySelector(".item12Down");
+  remove12 = document.querySelector(".remove-item-12");
+
+  up12.addEventListener("click", function () {
+    item12Counter++;
+    item12Amount.innerHTML = item12Counter;
+    updateTotal(2.75);
+    Storage.setAmount("item12", item12Counter);
+  });
+
+  down12.addEventListener("click", function () {
+    item12Counter--;
+    item12Amount.innerHTML = item12Counter;
+    updateTotal(-2.75);
+    Storage.setAmount("item12", item12Counter);
+
+    if (item12Counter === 0) {
+      item12Display.innerHTML = "";
+      Storage.removeAmount("item12");
+    }
+  });
+
+  remove12.addEventListener("click", function () {
+    item12Display.innerHTML = "";
+    updateTotal(-2.75 * item12Counter);
+    item12Counter = 0;
+    Storage.removeAmount("item12");
   });
 }
