@@ -245,6 +245,15 @@ if (localStorage.getItem("item5")) {
   item5Counter = 0;
 }
 
+// Item Display: Item 6: Pike Place® Roast
+const item6Display = document.querySelector(".item6-display");
+let item6Counter, item6Amount, up6, down6, remove6;
+if (localStorage.getItem("item6")) {
+  item6Counter = parseInt(localStorage.getItem("item6"));
+} else {
+  item6Counter = 0;
+}
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
@@ -311,6 +320,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.2);
     Storage.setAmount("item5", item5Counter);
   });
+
+  // Item 6: Pike Place® Roast
+  const item6Button = document.querySelector(".six__cart__button");
+
+  item6Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item6")) {
+      initializeItem6();
+    }
+    item6Counter++;
+    item6Amount.innerHTML = item6Counter;
+    updateTotal(2.8);
+    Storage.setAmount("item6", item6Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -324,16 +346,20 @@ if (checkStorageForCart()) {
     initializeItem2();
   }
   if (localStorage.getItem("item3")) {
-    // Item 2: Blonde Caffe Americano
+    // Item 3: Blonde Caffe Americano
     initializeItem3();
   }
   if (localStorage.getItem("item4")) {
-    // Item 2: Blonde Roast
+    // Item 4: Blonde Roast
     initializeItem4();
   }
   if (localStorage.getItem("item5")) {
-    // Item 2: Dark Roast Coffee
+    // Item 5: Dark Roast Coffee
     initializeItem5();
+  }
+  if (localStorage.getItem("item6")) {
+    // Item 6: Pike Place® Roast
+    initializeItem6();
   }
 }
 
@@ -524,7 +550,7 @@ function initializeItem3() {
 
 /**
  * Initializes item4 if it is already in the cart or needs to be added to the cart.
- * Blonde Caffe Americano
+ * Blonde Roast
  */
 function initializeItem4() {
   item4Display.innerHTML += `<div class="four4-cart-item">
@@ -627,5 +653,59 @@ function initializeItem5() {
     updateTotal(-2.2 * item5Counter);
     item5Counter = 0;
     Storage.removeAmount("item5");
+  });
+}
+
+/**
+ * Initializes item6 if it is already in the cart or needs to be added to the cart.
+ * Pike Place® Roast
+ */
+function initializeItem6() {
+  item6Display.innerHTML += `<div class="six6-cart-item">
+  <img src="../img/dark-roast-coffee.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Pike Place®</span> Roast</h3>
+      <h4>$2.80</h4>
+      <span class="remove-item-6">Remove</span>
+    </div>
+    <div>
+      <div class="item6Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount6">${item6Counter}</p>
+      <div class="item6Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item6Amount = document.querySelector(".item-amount6");
+  up6 = document.querySelector(".item6Up");
+  down6 = document.querySelector(".item6Down");
+  remove6 = document.querySelector(".remove-item-6");
+
+  up6.addEventListener("click", function () {
+    item6Counter++;
+    item6Amount.innerHTML = item6Counter;
+    updateTotal(2.8);
+    Storage.setAmount("item6", item6Counter);
+  });
+
+  down6.addEventListener("click", function () {
+    item6Counter--;
+    item6Amount.innerHTML = item6Counter;
+    updateTotal(-2.8);
+    Storage.setAmount("item6", item6Counter);
+
+    if (item6Counter === 0) {
+      item6Display.innerHTML = "";
+      Storage.removeAmount("item6");
+    }
+  });
+
+  remove6.addEventListener("click", function () {
+    item6Display.innerHTML = "";
+    updateTotal(-2.8 * item6Counter);
+    item6Counter = 0;
+    Storage.removeAmount("item6");
   });
 }
