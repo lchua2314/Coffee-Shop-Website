@@ -281,6 +281,15 @@ if (localStorage.getItem("item9")) {
   item9Counter = 0;
 }
 
+// Item Display: Item 10: Espresso
+const item10Display = document.querySelector(".item10-display");
+let item10Counter, item10Amount, up10, down10, remove10;
+if (localStorage.getItem("item10")) {
+  item10Counter = parseInt(localStorage.getItem("item10"));
+} else {
+  item10Counter = 0;
+}
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
@@ -399,6 +408,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.34);
     Storage.setAmount("item9", item9Counter);
   });
+
+  // Item 10: Espresso
+  const item10Button = document.querySelector(".ten__cart__button");
+
+  item10Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item10")) {
+      initializeItem10();
+    }
+    item10Counter++;
+    item10Amount.innerHTML = item10Counter;
+    updateTotal(2.89);
+    Storage.setAmount("item10", item10Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -438,6 +460,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item9")) {
     // Item 9: Blonde Cappuccino
     initializeItem9();
+  }
+  if (localStorage.getItem("item10")) {
+    // Item 10: Espresso
+    initializeItem10();
   }
 }
 
@@ -947,5 +973,59 @@ function initializeItem9() {
     updateTotal(-2.34 * item9Counter);
     item9Counter = 0;
     Storage.removeAmount("item9");
+  });
+}
+
+/**
+ * Initializes item10 if it is already in the cart or needs to be added to the cart.
+ * Espresso
+ */
+function initializeItem10() {
+  item10Display.innerHTML += `<div class="ten10-cart-item">
+  <img src="../img/espresso.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Espr</span>esso</h3>
+      <h4>$2.89</h4>
+      <span class="remove-item-10">Remove</span>
+    </div>
+    <div>
+      <div class="item10Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount10">${item10Counter}</p>
+      <div class="item10Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item10Amount = document.querySelector(".item-amount10");
+  up10 = document.querySelector(".item10Up");
+  down10 = document.querySelector(".item10Down");
+  remove10 = document.querySelector(".remove-item-10");
+
+  up10.addEventListener("click", function () {
+    item10Counter++;
+    item10Amount.innerHTML = item10Counter;
+    updateTotal(2.89);
+    Storage.setAmount("item10", item10Counter);
+  });
+
+  down10.addEventListener("click", function () {
+    item10Counter--;
+    item10Amount.innerHTML = item10Counter;
+    updateTotal(-2.89);
+    Storage.setAmount("item10", item10Counter);
+
+    if (item10Counter === 0) {
+      item10Display.innerHTML = "";
+      Storage.removeAmount("item10");
+    }
+  });
+
+  remove10.addEventListener("click", function () {
+    item10Display.innerHTML = "";
+    updateTotal(-2.89 * item10Counter);
+    item10Counter = 0;
+    Storage.removeAmount("item10");
   });
 }
