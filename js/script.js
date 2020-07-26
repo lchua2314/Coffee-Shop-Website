@@ -199,6 +199,7 @@ function updateTotal(moneyChange) {
 }
 
 /* Item displays in the DOM */
+
 // Item Display: Item 1: Caffe Americano
 const item1Display = document.querySelector(".item1-display");
 let item1Counter, item1Amount, up1, down1, remove1;
@@ -215,6 +216,15 @@ if (localStorage.getItem("item2")) {
   item2Counter = parseInt(localStorage.getItem("item2"));
 } else {
   item2Counter = 0;
+}
+
+// Item Display: Item 3: Blonde Caffe Americano
+const item3Display = document.querySelector(".item3-display");
+let item3Counter, item3Amount, up3, down3, remove3;
+if (localStorage.getItem("item3")) {
+  item3Counter = parseInt(localStorage.getItem("item3"));
+} else {
+  item3Counter = 0;
 }
 
 // Tests whether or not person is on the Menu page
@@ -244,6 +254,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.6);
     Storage.setAmount("item2", item2Counter);
   });
+
+  // Item 3: Blonde Caffe Americano
+  const item3Button = document.querySelector(".three__cart__button");
+
+  item3Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item3")) {
+      initializeItem3();
+    }
+    item3Counter++;
+    item3Amount.innerHTML = item3Counter;
+    updateTotal(2.79);
+    Storage.setAmount("item3", item3Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -255,6 +278,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item2")) {
     // Item 2: Caffe Misto
     initializeItem2();
+  }
+  if (localStorage.getItem("item3")) {
+    // Item 2: Blonde Caffe Americano
+    initializeItem3();
   }
 }
 
@@ -386,5 +413,59 @@ function initializeItem2() {
     updateTotal(-2.6 * item2Counter);
     item2Counter = 0;
     Storage.removeAmount("item2");
+  });
+}
+
+/**
+ * Initializes item3 if it is already in the cart or needs to be added to the cart.
+ * Blonde Caffe Americano
+ */
+function initializeItem3() {
+  item3Display.innerHTML += `<div class="three3-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Blonde Caffè</span> Americano</h3>
+      <h4>$2.79</h4>
+      <span class="remove-item-3">Remove</span>
+    </div>
+    <div>
+      <div class="item3Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount3">${item3Counter}</p>
+      <div class="item3Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item3Amount = document.querySelector(".item-amount3");
+  up3 = document.querySelector(".item3Up");
+  down3 = document.querySelector(".item3Down");
+  remove3 = document.querySelector(".remove-item-3");
+
+  up3.addEventListener("click", function () {
+    item3Counter++;
+    item3Amount.innerHTML = item3Counter;
+    updateTotal(2.79);
+    Storage.setAmount("item3", item3Counter);
+  });
+
+  down3.addEventListener("click", function () {
+    item3Counter--;
+    item3Amount.innerHTML = item3Counter;
+    updateTotal(-2.79);
+    Storage.setAmount("item3", item3Counter);
+
+    if (item3Counter === 0) {
+      item3Display.innerHTML = "";
+      Storage.removeAmount("item3");
+    }
+  });
+
+  remove3.addEventListener("click", function () {
+    item3Display.innerHTML = "";
+    updateTotal(-2.79 * item3Counter);
+    item3Counter = 0;
+    Storage.removeAmount("item3");
   });
 }
