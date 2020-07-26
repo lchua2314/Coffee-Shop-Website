@@ -227,6 +227,15 @@ if (localStorage.getItem("item3")) {
   item3Counter = 0;
 }
 
+// Item Display: Item 4: Blonde Roast
+const item4Display = document.querySelector(".item4-display");
+let item4Counter, item4Amount, up4, down4, remove4;
+if (localStorage.getItem("item4")) {
+  item4Counter = parseInt(localStorage.getItem("item4"));
+} else {
+  item4Counter = 0;
+}
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
@@ -267,6 +276,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.79);
     Storage.setAmount("item3", item3Counter);
   });
+
+  // Item 4: Blonde Roast
+  const item4Button = document.querySelector(".four__cart__button");
+
+  item4Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item4")) {
+      initializeItem4();
+    }
+    item4Counter++;
+    item4Amount.innerHTML = item4Counter;
+    updateTotal(2.05);
+    Storage.setAmount("item4", item4Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -282,6 +304,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item3")) {
     // Item 2: Blonde Caffe Americano
     initializeItem3();
+  }
+  if (localStorage.getItem("item4")) {
+    // Item 2: Blonde Roast
+    initializeItem4();
   }
 }
 
@@ -467,5 +493,59 @@ function initializeItem3() {
     updateTotal(-2.79 * item3Counter);
     item3Counter = 0;
     Storage.removeAmount("item3");
+  });
+}
+
+/**
+ * Initializes item4 if it is already in the cart or needs to be added to the cart.
+ * Blonde Caffe Americano
+ */
+function initializeItem4() {
+  item4Display.innerHTML += `<div class="four4-cart-item">
+  <img src="../img/dark-roast-coffee.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Blonde</span> Roast</h3>
+      <h4>$2.05</h4>
+      <span class="remove-item-4">Remove</span>
+    </div>
+    <div>
+      <div class="item4Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount4">${item4Counter}</p>
+      <div class="item4Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item4Amount = document.querySelector(".item-amount4");
+  up4 = document.querySelector(".item4Up");
+  down4 = document.querySelector(".item4Down");
+  remove4 = document.querySelector(".remove-item-4");
+
+  up4.addEventListener("click", function () {
+    item4Counter++;
+    item4Amount.innerHTML = item4Counter;
+    updateTotal(2.05);
+    Storage.setAmount("item4", item4Counter);
+  });
+
+  down4.addEventListener("click", function () {
+    item4Counter--;
+    item4Amount.innerHTML = item4Counter;
+    updateTotal(-2.05);
+    Storage.setAmount("item4", item4Counter);
+
+    if (item4Counter === 0) {
+      item4Display.innerHTML = "";
+      Storage.removeAmount("item4");
+    }
+  });
+
+  remove4.addEventListener("click", function () {
+    item4Display.innerHTML = "";
+    updateTotal(-2.05 * item4Counter);
+    item4Counter = 0;
+    Storage.removeAmount("item4");
   });
 }
