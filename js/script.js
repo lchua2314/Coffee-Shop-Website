@@ -198,73 +198,27 @@ function updateTotal(moneyChange) {
   }
 }
 
+// Item displays in the DOM
 const item1Display = document.querySelector(".item1-display");
+let item1Counter;
 
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
   const item1Button = document.querySelector(".one__cart__button");
-  // let item1Amount, up1, down1, remove1;
-  let item1Counter;
   if (localStorage.getItem("item1")) {
     item1Counter = parseInt(localStorage.getItem("item1"));
   } else {
-    item1Counter = 0; // Save this in local storage
+    item1Counter = 0;
   }
 
   item1Button.addEventListener("click", function () {
     if (!localStorage.getItem("item1")) {
-      item1Display.innerHTML += `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
-    <div>
-      <h3><span class="span-primary">Caffè</span> Americano</h3>
-      <h4>$2.10</h4>
-      <span class="remove-item-1">Remove</span>
-    </div>
-    <div>
-      <div class="item1Up">
-      <i class="fas fa-chevron-up"></i>
-      </div>
-      <p class="item-amount1">1</p>
-      <div class="item1Down">
-      <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-          </div >`;
-      item1Amount = document.querySelector(".item-amount1");
-      up1 = document.querySelector(".item1Up");
-      down1 = document.querySelector(".item1Down");
-      remove1 = document.querySelector(".remove-item-1");
-
-      up1.addEventListener("click", function () {
-        item1Counter++;
-        item1Amount.innerHTML = item1Counter;
-        updateTotal(2.1);
-        Storage.setAmount("item1", item1Counter);
-      });
-
-      down1.addEventListener("click", function () {
-        item1Counter--;
-        item1Amount.innerHTML = item1Counter;
-        updateTotal(-2.1);
-        Storage.setAmount("item1", item1Counter);
-
-        if (item1Counter === 0) {
-          item1Display.innerHTML = "";
-          Storage.removeAmount("item1");
-        }
-      });
-
-      remove1.addEventListener("click", function () {
-        item1Display.innerHTML = "";
-        updateTotal(-2.1 * item1Counter);
-        item1Counter = 0;
-        Storage.removeAmount("item1");
-      });
-    } else {
-      item1Amount.innerHTML++;
+      initializeItem1();
     }
     item1Counter++;
+    console.log("item1Counter BUTTON: " + item1Counter);
+    item1Amount.innerHTML = item1Counter;
     updateTotal(2.1);
     Storage.setAmount("item1", item1Counter);
   });
@@ -382,7 +336,7 @@ if (document.querySelector(".one__cart__button")) {
 if (checkStorageForCart()) {
   if (localStorage.getItem("item1")) {
     // Item 1: Caffe Americano
-    let item1Counter = parseInt(localStorage.getItem("item1"));
+    item1Counter = parseInt(localStorage.getItem("item1"));
 
     item1Display.innerHTML += `<div class="one1-cart-item">
   <img src="../img/caffe-americano.webp" alt="product" />
@@ -435,6 +389,9 @@ if (checkStorageForCart()) {
   }
 }
 
+/**
+ * Checks if there is at least one item in the local storage
+ */
 function checkStorageForCart() {
   if (
     localStorage.getItem("item1") ||
@@ -453,4 +410,61 @@ function checkStorageForCart() {
     return true;
   }
   return false;
+}
+
+function initializeItem1() {
+  item1Display.innerHTML += `<div class="one1-cart-item">
+  <img src="../img/caffe-americano.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Americano</h3>
+      <h4>$2.10</h4>
+      <span class="remove-item-1">Remove</span>
+    </div>
+    <div>
+      <div class="item1Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount1">${item1Counter}</p>
+      <div class="item1Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item1Amount = document.querySelector(".item-amount1");
+  up1 = document.querySelector(".item1Up");
+  down1 = document.querySelector(".item1Down");
+  remove1 = document.querySelector(".remove-item-1");
+
+  up1.addEventListener("click", function () {
+    item1Counter++;
+    item1Amount.innerHTML = item1Counter;
+    updateTotal(2.1);
+    Storage.setAmount("item1", item1Counter);
+    console.log("Up1: " + localStorage.getItem("item1"));
+    console.log("item1Counter: " + item1Counter);
+  });
+
+  down1.addEventListener("click", function () {
+    item1Counter--;
+    item1Amount.innerHTML = item1Counter;
+    updateTotal(-2.1);
+    Storage.setAmount("item1", item1Counter);
+    console.log("Down1: " + localStorage.getItem("item1"));
+    console.log("item1Counter: " + item1Counter);
+
+    if (item1Counter === 0) {
+      item1Display.innerHTML = "";
+      Storage.removeAmount("item1");
+      console.log("0: " + localStorage.getItem("item1"));
+    }
+  });
+
+  remove1.addEventListener("click", function () {
+    item1Display.innerHTML = "";
+    updateTotal(-2.1 * item1Counter);
+    item1Counter = 0;
+    Storage.removeAmount("item1");
+    console.log("Remove1: " + localStorage.getItem("item1"));
+    console.log("item1Counter: " + item1Counter);
+  });
 }
