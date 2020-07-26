@@ -236,6 +236,15 @@ if (localStorage.getItem("item4")) {
   item4Counter = 0;
 }
 
+// Item Display: Item 5: Dark Roast Coffee
+const item5Display = document.querySelector(".item5-display");
+let item5Counter, item5Amount, up5, down5, remove5;
+if (localStorage.getItem("item5")) {
+  item5Counter = parseInt(localStorage.getItem("item5"));
+} else {
+  item5Counter = 0;
+}
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
@@ -289,6 +298,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.05);
     Storage.setAmount("item4", item4Counter);
   });
+
+  // Item 5: Dark Roast Coffee
+  const item5Button = document.querySelector(".five__cart__button");
+
+  item5Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item5")) {
+      initializeItem5();
+    }
+    item5Counter++;
+    item5Amount.innerHTML = item5Counter;
+    updateTotal(2.2);
+    Storage.setAmount("item5", item5Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -308,6 +330,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item4")) {
     // Item 2: Blonde Roast
     initializeItem4();
+  }
+  if (localStorage.getItem("item5")) {
+    // Item 2: Dark Roast Coffee
+    initializeItem5();
   }
 }
 
@@ -547,5 +573,59 @@ function initializeItem4() {
     updateTotal(-2.05 * item4Counter);
     item4Counter = 0;
     Storage.removeAmount("item4");
+  });
+}
+
+/**
+ * Initializes item5 if it is already in the cart or needs to be added to the cart.
+ * Dark Roast Coffee
+ */
+function initializeItem5() {
+  item5Display.innerHTML += `<div class="five5-cart-item">
+  <img src="../img/dark-roast-coffee.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Dark Roast</span> Coffee</h3>
+      <h4>$2.20</h4>
+      <span class="remove-item-5">Remove</span>
+    </div>
+    <div>
+      <div class="item5Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount5">${item5Counter}</p>
+      <div class="item5Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item5Amount = document.querySelector(".item-amount5");
+  up5 = document.querySelector(".item5Up");
+  down5 = document.querySelector(".item5Down");
+  remove5 = document.querySelector(".remove-item-5");
+
+  up5.addEventListener("click", function () {
+    item5Counter++;
+    item5Amount.innerHTML = item5Counter;
+    updateTotal(2.2);
+    Storage.setAmount("item5", item5Counter);
+  });
+
+  down5.addEventListener("click", function () {
+    item5Counter--;
+    item5Amount.innerHTML = item5Counter;
+    updateTotal(-2.2);
+    Storage.setAmount("item5", item5Counter);
+
+    if (item5Counter === 0) {
+      item5Display.innerHTML = "";
+      Storage.removeAmount("item5");
+    }
+  });
+
+  remove5.addEventListener("click", function () {
+    item5Display.innerHTML = "";
+    updateTotal(-2.2 * item5Counter);
+    item5Counter = 0;
+    Storage.removeAmount("item5");
   });
 }
