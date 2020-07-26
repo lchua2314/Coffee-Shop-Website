@@ -272,6 +272,15 @@ if (localStorage.getItem("item8")) {
   item8Counter = 0;
 }
 
+// Item Display: Item 9: Blonde Cappuccino
+const item9Display = document.querySelector(".item9-display");
+let item9Counter, item9Amount, up9, down9, remove9;
+if (localStorage.getItem("item9")) {
+  item9Counter = parseInt(localStorage.getItem("item9"));
+} else {
+  item9Counter = 0;
+}
+
 // Tests whether or not person is on the Menu page
 if (document.querySelector(".one__cart__button")) {
   // Item 1: Caffe Americano
@@ -377,6 +386,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.59);
     Storage.setAmount("item8", item8Counter);
   });
+
+  // Item 9: Blonde Cappuccino
+  const item9Button = document.querySelector(".nine__cart__button");
+
+  item9Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item9")) {
+      initializeItem9();
+    }
+    item9Counter++;
+    item9Amount.innerHTML = item9Counter;
+    updateTotal(2.34);
+    Storage.setAmount("item9", item9Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -412,6 +434,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item8")) {
     // Item 8: Cappuccino
     initializeItem8();
+  }
+  if (localStorage.getItem("item9")) {
+    // Item 9: Blonde Cappuccino
+    initializeItem9();
   }
 }
 
@@ -867,5 +893,59 @@ function initializeItem8() {
     updateTotal(-2.59 * item8Counter);
     item8Counter = 0;
     Storage.removeAmount("item8");
+  });
+}
+
+/**
+ * Initializes item9 if it is already in the cart or needs to be added to the cart.
+ * Blonde Cappuccino
+ */
+function initializeItem9() {
+  item9Display.innerHTML += `<div class="nine9-cart-item">
+  <img src="../img/cappuccino.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Blonde</span> Cappuccino</h3>
+      <h4>$2.34</h4>
+      <span class="remove-item-9">Remove</span>
+    </div>
+    <div>
+      <div class="item9Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount9">${item9Counter}</p>
+      <div class="item9Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item9Amount = document.querySelector(".item-amount9");
+  up9 = document.querySelector(".item9Up");
+  down9 = document.querySelector(".item9Down");
+  remove9 = document.querySelector(".remove-item-9");
+
+  up9.addEventListener("click", function () {
+    item9Counter++;
+    item9Amount.innerHTML = item9Counter;
+    updateTotal(2.34);
+    Storage.setAmount("item9", item9Counter);
+  });
+
+  down9.addEventListener("click", function () {
+    item9Counter--;
+    item9Amount.innerHTML = item9Counter;
+    updateTotal(-2.34);
+    Storage.setAmount("item9", item9Counter);
+
+    if (item9Counter === 0) {
+      item9Display.innerHTML = "";
+      Storage.removeAmount("item9");
+    }
+  });
+
+  remove9.addEventListener("click", function () {
+    item9Display.innerHTML = "";
+    updateTotal(-2.34 * item9Counter);
+    item9Counter = 0;
+    Storage.removeAmount("item9");
   });
 }
