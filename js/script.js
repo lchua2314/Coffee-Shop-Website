@@ -198,14 +198,23 @@ function updateTotal(moneyChange) {
   }
 }
 
-// Item displays in the DOM
-// Item 1: Caffe Americano
+/* Item displays in the DOM */
+// Item Display: Item 1: Caffe Americano
 const item1Display = document.querySelector(".item1-display");
 let item1Counter, item1Amount, up1, down1, remove1;
 if (localStorage.getItem("item1")) {
   item1Counter = parseInt(localStorage.getItem("item1"));
 } else {
   item1Counter = 0;
+}
+
+// Item Display: Item 2: Caffe Misto
+const item2Display = document.querySelector(".item2-display");
+let item2Counter, item2Amount, up2, down2, remove2;
+if (localStorage.getItem("item2")) {
+  item2Counter = parseInt(localStorage.getItem("item2"));
+} else {
+  item2Counter = 0;
 }
 
 // Tests whether or not person is on the Menu page
@@ -222,6 +231,19 @@ if (document.querySelector(".one__cart__button")) {
     updateTotal(2.1);
     Storage.setAmount("item1", item1Counter);
   });
+
+  // Item 2: Caffe Misto
+  const item2Button = document.querySelector(".two__cart__button");
+
+  item2Button.addEventListener("click", function () {
+    if (!localStorage.getItem("item2")) {
+      initializeItem2();
+    }
+    item2Counter++;
+    item2Amount.innerHTML = item2Counter;
+    updateTotal(2.6);
+    Storage.setAmount("item2", item2Counter);
+  });
 }
 
 // Check if there are items in the local storage
@@ -229,6 +251,10 @@ if (checkStorageForCart()) {
   if (localStorage.getItem("item1")) {
     // Item 1: Caffe Americano
     initializeItem1();
+  }
+  if (localStorage.getItem("item2")) {
+    // Item 2: Caffe Misto
+    initializeItem2();
   }
 }
 
@@ -306,5 +332,59 @@ function initializeItem1() {
     updateTotal(-2.1 * item1Counter);
     item1Counter = 0;
     Storage.removeAmount("item1");
+  });
+}
+
+/**
+ * Initializes item2 if it is already in the cart or needs to be added to the cart.
+ * Caffe Misto
+ */
+function initializeItem2() {
+  item2Display.innerHTML += `<div class="two2-cart-item">
+  <img src="../img/caffe-misto.webp" alt="product" />
+    <div>
+      <h3><span class="span-primary">Caffè</span> Misto</h3>
+      <h4>$2.60</h4>
+      <span class="remove-item-2">Remove</span>
+    </div>
+    <div>
+      <div class="item2Up">
+      <i class="fas fa-chevron-up"></i>
+      </div>
+      <p class="item-amount2">${item2Counter}</p>
+      <div class="item2Down">
+      <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+          </div >`;
+  item2Amount = document.querySelector(".item-amount2");
+  up2 = document.querySelector(".item2Up");
+  down2 = document.querySelector(".item2Down");
+  remove2 = document.querySelector(".remove-item-2");
+
+  up2.addEventListener("click", function () {
+    item2Counter++;
+    item2Amount.innerHTML = item2Counter;
+    updateTotal(2.6);
+    Storage.setAmount("item2", item2Counter);
+  });
+
+  down2.addEventListener("click", function () {
+    item2Counter--;
+    item2Amount.innerHTML = item2Counter;
+    updateTotal(-2.6);
+    Storage.setAmount("item2", item2Counter);
+
+    if (item2Counter === 0) {
+      item2Display.innerHTML = "";
+      Storage.removeAmount("item2");
+    }
+  });
+
+  remove2.addEventListener("click", function () {
+    item2Display.innerHTML = "";
+    updateTotal(-2.6 * item2Counter);
+    item2Counter = 0;
+    Storage.removeAmount("item2");
   });
 }
