@@ -332,10 +332,15 @@
   // Padding-top lowered in mobile because there is no heading navbar
   .home,
   .menu,
-  .services,
-  .contact {
+  .services {
     .pic-area {
       padding-top: 20vh;
+    }
+  }
+
+  .contact {
+    .pic-area {
+      padding-top: 10vh;
     }
   }
 

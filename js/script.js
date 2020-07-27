@@ -21,6 +21,10 @@ function checkUsername() {
   } else {
     Storage.setUsername(usernameIn.value);
     location.reload();
+    if (usernameIn.value == "E-commerce") {
+      window.open("https://lchua2314.github.io/E-commerce-Website/index.html");
+      alert("Thanks for looking at the code! :)");
+    }
   }
 }
 
