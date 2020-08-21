@@ -550,7 +550,7 @@ function checkStorageForCart() {
  */
 function initializeItem1() {
   item1Display.innerHTML += `<div class="one1-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
+  <img src="../img/caffe-americano.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Caffè</span> Americano</h3>
       <h4>$2.10</h4>
@@ -604,7 +604,7 @@ function initializeItem1() {
  */
 function initializeItem2() {
   item2Display.innerHTML += `<div class="two2-cart-item">
-  <img src="../img/caffe-misto.webp" alt="product" />
+  <img src="../img/caffe-misto.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Caffè</span> Misto</h3>
       <h4>$2.60</h4>
@@ -658,7 +658,7 @@ function initializeItem2() {
  */
 function initializeItem3() {
   item3Display.innerHTML += `<div class="three3-cart-item">
-  <img src="../img/caffe-americano.webp" alt="product" />
+  <img src="../img/caffe-americano.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Blonde Caffè</span> Americano</h3>
       <h4>$2.79</h4>
@@ -712,7 +712,7 @@ function initializeItem3() {
  */
 function initializeItem4() {
   item4Display.innerHTML += `<div class="four4-cart-item">
-  <img src="../img/dark-roast-coffee.webp" alt="product" />
+  <img src="../img/dark-roast-coffee.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Blonde</span> Roast</h3>
       <h4>$2.05</h4>
@@ -766,7 +766,7 @@ function initializeItem4() {
  */
 function initializeItem5() {
   item5Display.innerHTML += `<div class="five5-cart-item">
-  <img src="../img/dark-roast-coffee.webp" alt="product" />
+  <img src="../img/dark-roast-coffee.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Dark Roast</span> Coffee</h3>
       <h4>$2.20</h4>
@@ -820,7 +820,7 @@ function initializeItem5() {
  */
 function initializeItem6() {
   item6Display.innerHTML += `<div class="six6-cart-item">
-  <img src="../img/dark-roast-coffee.webp" alt="product" />
+  <img src="../img/dark-roast-coffee.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Pike Place®</span> Roast</h3>
       <h4>$2.80</h4>
@@ -874,7 +874,7 @@ function initializeItem6() {
  */
 function initializeItem7() {
   item7Display.innerHTML += `<div class="seven7-cart-item">
-  <img src="../img/dark-roast-coffee.webp" alt="product" />
+  <img src="../img/dark-roast-coffee.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Decaf Pike </span>Place® Roast</h3>
       <h4>$2.25</h4>
@@ -928,7 +928,7 @@ function initializeItem7() {
  */
 function initializeItem8() {
   item8Display.innerHTML += `<div class="eight8-cart-item">
-  <img src="../img/cappuccino.webp" alt="product" />
+  <img src="../img/cappuccino.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Cappu</span>ccino</h3>
       <h4>$2.59</h4>
@@ -982,7 +982,7 @@ function initializeItem8() {
  */
 function initializeItem9() {
   item9Display.innerHTML += `<div class="nine9-cart-item">
-  <img src="../img/cappuccino.webp" alt="product" />
+  <img src="../img/cappuccino.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Blonde</span> Cappuccino</h3>
       <h4>$2.34</h4>
@@ -1036,7 +1036,7 @@ function initializeItem9() {
  */
 function initializeItem10() {
   item10Display.innerHTML += `<div class="ten10-cart-item">
-  <img src="../img/espresso.webp" alt="product" />
+  <img src="../img/espresso.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Espr</span>esso</h3>
       <h4>$2.89</h4>
@@ -1090,7 +1090,7 @@ function initializeItem10() {
  */
 function initializeItem11() {
   item11Display.innerHTML += `<div class="eleven11-cart-item">
-  <img src="../img/espresso-macchiato.webp" alt="product" />
+  <img src="../img/espresso-macchiato.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Espresso</span> Macchiato</h3>
       <h4>$2.18</h4>
@@ -1144,7 +1144,7 @@ function initializeItem11() {
  */
 function initializeItem12() {
   item12Display.innerHTML += `<div class="twelve12-cart-item">
-  <img src="../img/flat-white.webp" alt="product" />
+  <img src="../img/flat-white.jpg" alt="product" />
     <div>
       <h3><span class="span-primary">Flat</span> White</h3>
       <h4>$2.75</h4>
