@@ -23,7 +23,7 @@ who-we-are.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fnudatasecurity
 
 services.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.goodasgold.com%2Fcoffee%2Four-coffee-services%2F&psig=AOvVaw2za9K_MQKkR1ToKG8xl_zF&ust=1591140760043000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCIj08LPj4ekCFQAAAAAdAAAAABAP
 
-caffe-americano.webp, caffe-misto.webp, dark-roast-coffee.webp, cappuccino.webp, espresso.webp, espresso-macchiato.webp, flat-white.webp: All found on https://www.starbucks.com/menu/drinks/hot-coffees
+caffe-americano.webp, caffe-misto.webp, dark-roast-coffee.webp, cappuccino.webp, espresso.webp, espresso-macchiato.webp, flat-white.webp: All found on https://www.starbucks.com/menu/drinks/hot-coffees (NOTE: All of these were converted to jpg)
 
 entertainment.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Flaslomaspage.org%2F2019%2F05%2F31%2Fopen-mic-at-coffee-shop%2F&psig=AOvVaw1DUXu5PgKXYyURlre7axMt&ust=1591665273617000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCNib4L2H8ekCFQAAAAAdAAAAABAD
 
