@@ -5,7 +5,8 @@ I do not sell anything or make any profit from this project.
 
 # Coffee-Shop-Website
 
-Link: https://lchua2314.github.io/Coffee-Shop-Website/dist/index.html
+Want to view the project? Click on the link.
+Hosted by GitHub: https://lchua2314.github.io/Coffee-Shop-Website/dist/index.html
 
 # References
 
