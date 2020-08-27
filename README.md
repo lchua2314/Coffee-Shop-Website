@@ -4,6 +4,8 @@ Do not put real info into this website.
 
 # Coffee-Shop-Website
 
+Link: https://lchua2314.github.io/Coffee-Shop-Website/dist/index.html
+
 # References
 
 All coffee products and information taken from Starbucks.com
