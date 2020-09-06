@@ -77,8 +77,8 @@
         font-size: 1rem;
         letter-spacing: 1px;
         background: $primary-color;
-        border: 1px solid black;
-        color: black;
+        border: 1px solid $black-color;
+        color: $black-color;
         opacity: 0;
         @include transition-ease;
 

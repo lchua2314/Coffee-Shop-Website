@@ -46,7 +46,7 @@
       font-family: "Baloo 2", cursive;
       font-size: 1.5rem;
       text-align: center;
-      background-color: black;
+      background-color: $black-color;
       color: $primary-color;
       outline: none;
       border: 1px solid $primary-color;
@@ -69,7 +69,7 @@
       font-size: 1rem;
       letter-spacing: 1px;
       background: $primary-color;
-      border: 1px solid black;
+      border: 1px solid $black-color;
       @include transition-ease;
 
       &:hover {
@@ -82,7 +82,7 @@
       margin-top: 2rem;
 
       a {
-        color: black;
+        color: $black-color;
         outline: none;
         text-decoration: none;
         margin: 0.5rem;

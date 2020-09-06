@@ -62,7 +62,7 @@ header {
     height: 100%;
     overflow: auto;
     z-index: 5;
-    background: black;
+    background: $black-color;
     padding: 1.5rem;
     @include transition-ease;
     border: 2px groove $secondary-color;
@@ -85,7 +85,7 @@ header {
   }
 
   .item-display {
-    color: black;
+    color: $black-color;
   }
 
   .total {
@@ -234,7 +234,7 @@ header {
       height: 100%;
       overflow: auto;
       z-index: 5;
-      background: black;
+      background: $black-color;
       padding: 1.5rem;
       @include transition-ease;
       border: 2px groove $secondary-color;
@@ -330,7 +330,7 @@ footer {
     margin: 0;
 
     a {
-      color: black;
+      color: $black-color;
       outline: none;
       text-decoration: none;
       margin: 0.5rem;

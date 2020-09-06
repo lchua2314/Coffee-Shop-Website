@@ -15,7 +15,7 @@
     z-index: 2;
     width: 100%;
     padding: 1rem;
-    background: black;
+    background: $black-color;
     @include transition-ease;
   }
 
@@ -208,7 +208,7 @@
       justify-content: center;
       height: 100vh;
       overflow: hidden;
-      background: black;
+      background: $black-color;
       list-style-type: none;
       padding-right: 1rem;
       transform: translateY(-100%);
@@ -311,7 +311,7 @@
         margin: 0;
 
         a {
-          color: black;
+          color: $black-color;
           outline: none;
           text-decoration: none;
           margin: 0.5rem;

@@ -44,7 +44,7 @@
       font-size: 1rem;
       letter-spacing: 1px;
       background: $primary-color;
-      border: 1px solid black;
+      border: 1px solid $black-color;
       @include transition-ease;
 
       &:hover {
