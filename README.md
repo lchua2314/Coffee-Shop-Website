@@ -31,7 +31,7 @@ caffe-americano.webp, caffe-misto.webp, dark-roast-coffee.webp, cappuccino.webp,
 
 entertainment.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Flaslomaspage.org%2F2019%2F05%2F31%2Fopen-mic-at-coffee-shop%2F&psig=AOvVaw1DUXu5PgKXYyURlre7axMt&ust=1591665273617000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCNib4L2H8ekCFQAAAAAdAAAAABAD
 
-parking.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fnypost.com%2F2020%2F03%2F17%2Falternate-side-parking-suspended-in-nyc-over-coronavirus%2F&psig=AOvVaw1BmUY4leyjAhUozY0nLHtp&ust=1591665646528000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCLiF8eOG8ekCFQAAAAAdAAAAABAb
+parking.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fnypost.com%2F2022%2F03%2F17%2Falternate-side-parking-suspended-in-nyc-over-coronavirus%2F&psig=AOvVaw1BmUY4leyjAhUozY0nLHtp&ust=1591665646528000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCLiF8eOG8ekCFQAAAAAdAAAAABAb
 
 venue.jpg: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.keurig.ca%2Fblog%2Fhow-to-host-an-afternoon-coffee-party%2F&psig=AOvVaw3nq5zVpaTUvJL8P4GuEXem&ust=1591667832936000&source=images&cd=vfe&ved=0CAMQjB1qFwoTCJjKsfGO8ekCFQAAAAAdAAAAABAD
 
